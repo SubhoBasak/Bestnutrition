@@ -1,0 +1,39 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.card {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border: .1px solid rgba(170, 170, 170, 0.466) !important;
+    border-radius: 40px;
+}
+.form-header {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.divider::after{
+    content: "";
+    width: 100%;
+    background-color: transparent;
+    display: block;
+    height: 1px;
+    border-top: 1px solid #c7c7c7c4;
+    position: absolute;
+    top: 60%;
+    margin-top: -1px;
+    z-index: -1;
+}
+
+.height-2 {
+    height: 2rem !important;
+}
+
+.inactive{
+    color: rgb(189, 189, 189) !important;
+}
+.active{
+    color: white !important;
+}

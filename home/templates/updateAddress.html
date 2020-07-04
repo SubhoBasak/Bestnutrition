@@ -1,0 +1,58 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>  
+    <div class="d-flex justify-content-center">
+        <div class="col-xs-12 col-lg-4">
+            <img class="image-center m-t-20" src="{% static 'images/logo.png' %}">
+            <div class="card shadow-sm m-t-15 col-xs-12 col-lg-12">
+                <p class="form-header">Add Address</p>
+                <form class="m-b-15" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group" data-validate="Please enter firstname">
+                        <label for="firstname"><small class="text-dark font-weight-bold">First name</small></label>
+                        <input id="firstname" class="form-control" type="text" name="first_name" placeholder="First name" required>
+                    </div>
+
+                    <div class="form-group" data-validate="Please enter lastname">
+                        <label for="lastname"><small class="text-dark font-weight-bold">Last name</small></label>
+                        <input id="lastname" class="form-control" type="text" name="last_name" placeholder="Last name">
+                    </div>
+
+                    <div class="form-group" data-validate="Please enter phone number">
+                        <label for="phone"><small class="text-dark font-weight-bold">Phone no.</small></label>
+                        <input id="phone" class="form-control" type="number" name="phone" placeholder="phone number">
+                    </div>
+
+                    <div class="form-group" data-validate="Please enter address">
+                        <label for="address"><small class="text-dark font-weight-bold">Address</small></label>
+                        <input id="address" class="form-control" type="text" name="address" placeholder="Address" required>
+                    </div>
+
+                    <div class="form-group" data-validate="Please enter city">
+                        <label for="city"><small class="text-dark font-weight-bold">City</small></label>
+                        <input id="city" class="form-control" type="text" name="city" placeholder="City" required>
+                    </div>
+                    <div class="form-group" data-validate="Please enter state">
+                        <label for="state"><small class="text-dark font-weight-bold">State</small></label>
+                        <input id="state" class="form-control" type="text" name="state" placeholder="State" required>
+                    </div>
+                    <div class="form-group" data-validate="Please enter pincode">
+                        <label for="pincode"><small class="text-dark font-weight-bold">Pincode</small></label>
+                        <input id="pincode" class="form-control" type="number" maxlength="6" name="pin_code" placeholder="Pincode" required>
+                    </div>
+                    <button type="submit" class="btn m-t-15 col-lg-12 btn-success">Continue</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

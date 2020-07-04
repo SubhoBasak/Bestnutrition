@@ -1,0 +1,172 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>{{main_prod.name}}</title>
+{% endblock %}
+
+{% block content %}
+    <section class="main-home">
+        <div class="container">
+            <div class="row">
+                <!-- breadcrumb -->
+                <div class="col-md-12">
+                    <div class="breadcrumb-grid ">
+                        <!-- <ul class="breadcrumb">
+                       <li><a href="#">Home</a></li>
+                       <li><a href="#">All Categories</a></li>
+                       <li class="active"><a href="#">Amla</a></li>
+                    </ul> -->
+                    </div>
+                </div>
+                <!-- end breadcrumb -->
+            </div>
+
+            <div class="row product-viewer">
+                <div class="col-md-7 col-xs-12">
+                    <div class="product-viewer-left">
+                        <div class="product-viewer-left-img-big">
+                            <div class="swiper-container gallery-top">
+                                <div class="swiper-wrapper">
+                                    {% for img in img_s %}
+                                        <div class="swiper-slide">
+                                            <img class="zoom_01" src="{{img.image.url}}" alt="" data-zoom-image="{{img.zoom.url}}">
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                                <!-- Add Arrows -->
+                                <div class="swiper-button-next swiper-button-white"></div>
+                                <div class="swiper-button-prev swiper-button-white"></div>
+                            </div>
+                        </div>
+                        <div class="product-viewer-left-img-small">
+                            <div class="swiper-container gallery-thumbs">
+                                <div class="swiper-wrapper">
+                                    {% for img in img_s %}
+                                        <div class="swiper-slide">
+                                            <img src="{{img.image.url}}" alt="">
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <!--  -->
+                        </div>
+
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="col-md-5 col-xs-12">
+                    <div class="product-viewer-right">
+                        <h2 class="product-name">
+                          <a href="#" title="">{{main_prod.name}}</a>
+                       </h2>
+                        <div class="sub-name">{{main_prod.sub_name}}</div>
+                        <div class="price-box">
+                            <p>Rs.{{main_prod.price}}/-</p>
+                        </div>
+                        <div class="stars-wrapper clearfix">
+                            <div class="value">
+                                <i data-index="1" class="fa fa-star active"></i>
+                                <input type="radio" value="6" class="radio">
+                            </div>
+                            <div class="value">
+                                <i data-index="2" class="fa fa-star active"></i>
+                                <input type="radio" value="7" class="radio">
+                            </div>
+                            <div class="value">
+                                <i data-index="3" class="fa fa-star active"></i>
+                                <input type="radio" value="8" class="radio">
+                            </div>
+                            <div class="value">
+                                <i data-index="4" class="fa fa-star active"></i>
+                                <input type="radio" value="9" class="radio">
+                            </div>
+                            <div class="value">
+                                <i data-index="5" class="fa fa-star checked active"></i>
+                                <input type="radio" value="10" class="radio">
+                            </div>
+                            <span class="vote">| {{main_prod.rating}} Rating </span>
+                        </div>
+                        <div class="name-detail">
+                            <p><b>Ingredients</b> – {{main_prod.ingredients}}</p>
+                            <br>
+                            <p><b>Suggested Use </b> – {{main_prod.suggested}}</p>
+                            <br>
+                            <p><b>Packing</b> - {{main_prod.packing}}</p>
+                            <br>
+                            <p><b>Reminder</b> - {{main_prod.reminder}}</p>
+                        </div>
+                        <div class="clearfix"></div>
+                        <!--  <p class="available">Available: Stock</p> -->
+                        <!-- <div class="add-cart-wishlist-compare">
+                             <div class="add-cart">
+                                <input value="ADD TO BAG" data-toggle="tooltip" data-placement="top" title="add to bag" class="submit button dark" id="submit" name="submit" type="submit">
+                             </div>
+                             <div class="add-wishlist">
+                                <a href="" data-toggle="tooltip" data-placement="top" title="add-wishlist"><i class="fa fa-heart"></i></a>
+                             </div>
+                             <div class="add-compare">
+                                <a href="" data-toggle="tooltip" data-placement="top" title="add-compare"><i class="fa fa-exchange"></i></a>
+                             </div>
+                          </div> -->
+                        <div class="addthis">
+                            <form method="POST">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-success btn-lg" name="add_to_cart">Add to cart</button>
+                                <a href="/buy_now/{{main_prod.id}}/" class="btn btn-success btn-lg">Buy Now</a>
+                                <button type="submit" class="btn btn-success btn-lg" name="ask_question">Ask Question</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  -->
+
+            <div class="bestsellerproduct">
+                <div class="title-block">
+                    <h2>Relative Product </h2>
+                </div>
+                <div class="products-grid row">
+                    {% for rel_prod in rel_prod_s %}
+                        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 products-mb clearfix">
+                            <!-- item-inner -->
+                            <div class="item-inner">
+                                <div class="box-images">
+                                    <a class="product-image" href="{% url 'details' rel_prod.rel_prod.id %}" title=""><img src="{{rel_prod.rel_prod.thumbnail.url}}" alt=""></a>
+                                </div>
+                                <div class="product-shop">
+                                    <h2 class="product-name">
+                                          <a href="{% url 'details' rel_prod.rel_prod.id %}" title="">{{rel_prod.rel_prod.name}}</a>
+                                          </h2>
+                                    <div class="sub-name">{{rel_prod.rel_prod.sub_name|slice:":30"}}...</div>
+                                    <div class="price-box">
+                                        <p class="special-price">
+                                            <span class="price-label">Special Price</span>
+                                            <span class="price">Rs.{{rel_prod.rel_prod.price}}/-</span>
+                                        </p>
+                                        <p class="old-price">
+                                            <span class="price-label">Special Price</span>
+                                        </p>
+
+                                    </div>
+                                    <ul class="add-to-links">
+                                        <li class="cart">
+                                            <a href="{% url 'details' rel_prod.rel_prod.id %}" class="view-link" title="">Read More</a>
+                                        </li>
+                                        <li class="wishlist">
+                                            <a href="{% url 'details' rel_prod.rel_prod.id %}" class="link-wishlist" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- <div class="label-new">
+                                    New
+                                </div> -->
+                            </div>
+                            <!--end item-inner -->
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

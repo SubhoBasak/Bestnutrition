@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Bestnutrition - Distributiors</title>
+{% endblock %}
+
+{% block content %}
+    <section class="main-home">
+        <div class="container">
+           <div class="row">
+              <!-- breadcrumb -->
+              <div class="col-md-12">
+                 <div class="breadcrumb-grid breadcrumb-about">
+                    <ul class="breadcrumb">
+                       <li><a href="{% url 'index' %}">Home</a></li>
+                       <li class="active"><a href="#">Distributor</a></li>
+                    </ul>
+                 </div>
+              </div>
+              <!-- end breadcrumb -->
+           </div>
+           <div class="row ">
+                 <div class="contact-page">
+                    <div class="col-md-6 col-sm-6">
+                    <div class="contact-page-left">
+                       <div class="title-block">
+                           {% if status == 1 %}
+                                <div class="alert alert-success">
+                                    <p>Thank you to contact with us. We will answer you soon.</p>
+                                </div>
+                           {% endif %}
+                          <h2>Ask Questions</h2>
+                       </div>
+                       <form method="POST">
+                           {% csrf_token %}
+                          <div class="form-group">
+                              <label >Name <span>*</span></label>
+                              <input  class="form-control input-post" type="text" name="name">
+                          </div>
+                          <div class="form-group">
+                              <label >Email adress <span>*</span></label>
+                              <input  class="form-control input-post" type="email" name="email">
+                          </div>
+                          <div class="form-group">
+                             <label >Subject </label>
+                             <input  class="form-control input-post" type="text" name="subject">
+                          </div>
+                          <div class="form-group">
+                                   <label >Message </label>
+                                   <textarea class="form-control input-post form-comment" rows="3" name="message"></textarea>
+                                </div>
+
+                                <p class="form-submit">
+
+<!--                                   <a class="button hover-rhv-float" href="#" title="">Submit</a>-->
+                                    <button type="submit" class="button hover-rhv-float">Submit</button>
+                                </p>
+
+                       </form>
+                    </div>
+                 </div>
+                 <div class="col-md-6 col-sm-6">
+                    <div class="contact-page-right">
+                       <div class="title-block">
+                          <!-- <h2>Distributorship Contact</h2> -->
+                       </div>
+                       <div class="contact-info">
+                         <img src="{% static 'images/distributor.jpg' %}" alt="">
+                       </div>
+
+                       <aside class="social-sidebar-right">
+                       </aside>
+
+                    </div>
+                 </div>
+                 </div>
+           </div>
+        </div>
+     </section>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Bestnutrition - Site map</title>
+{% endblock %}
+
+{% block content %}
+     <section class="main-home">
+        <div class="container">
+           <div class="row">
+              <!-- breadcrumb -->
+              <div class="col-md-12">
+                 <div class="breadcrumb-grid ">
+                    <!-- <ul class="breadcrumb">
+                       <li><a href="#">Home</a></li>
+                       <li><a href="#">All Categories</a></li>
+                       <li class="active"><a href="#">Amla</a></li>
+                    </ul> -->
+                 </div>
+              </div>
+              <!-- end breadcrumb -->
+           </div>
+           <style>
+           .parent ul { font-size: 16px; }
+           .parent ul li a{}
+           .hield ul { font-size: 14px;  }
+
+           </style>
+
+           <div class="row product-viewer">
+            <div class="col-md-12 col-xs-12">
+              <ul style="font-size: 16px; text-transform: uppercase;">
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'all_products' %}">All Products</a>
+                  <ul style="padding-left: 25px;font-size: 16px; padding-bottom: 20px; padding-top: 20px;">
+                      {% for item in all_items %}
+                        <li><a href="{% url 'details' item.id %}">{{item.name}}</a></li>
+                      {% endfor %}
+                  </ul>
+                  </li>
+                <li><a href="{% url 'about_us' %}">About Us</a></li>
+                <li><a href="{% url 'contact_us' %}">Contact Us</a></li>
+              </ul>
+            </div>
+           </div>
+        </div>
+     </section>
+{% endblock %}

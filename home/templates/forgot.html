@@ -1,0 +1,45 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bestnutrition - Sign in</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>  
+    <div class="d-flex justify-content-center">
+        <div class="col-xs-12 col-lg-4">
+            <img class="image-center m-t-20" src="{% static 'images/logo.png' %}">
+            {% if status == -1 %}
+                <div class="alert alert-danger">
+                    <p>No account found with this email.</p>
+                </div>
+            {% elif status == 1 %}
+                <div class="alert alert-success">
+                    <p>Verification email has been sent.</p>
+                </div>
+            {% endif %}
+            <div class="card shadow-sm m-t-15 col-xs-12 col-lg-12">
+                <p class="form-header">Forgot password</p>
+                <form class="m-b-15" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="exampleInputEmail1"><small class="text-dark font-weight-bold">Email</small></label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="email_id">
+                    </div>
+                    <button type="submit" class="btn col-lg-12 btn-success">Continue</button>
+                </form>
+            </div>
+            <div class="divider m-t-15 text-center" style="position: relative;">
+                <small class="bgwhite p-l-10 p-r-10" style="z-index: 20;">Don't have an account?</small>
+            </div>
+            <a href="{% url 'signup' %}" class="btn btn-light col-lg-12 col-xs-12 m-t-15 text-decoration-none text-reset" style="font-weight: 500;">
+                Create account
+            </a>
+        </div>
+    </div>
+</body>
+</html>

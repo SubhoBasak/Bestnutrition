@@ -1,0 +1,228 @@
+{% load static %}
+
+<html>
+<head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      {% block title %}
+
+      {% endblock %}
+      <!-- favicon -->
+      <link rel="icon" type="images/favicon" href="{% static 'images/favicon.png' %}">
+      <!-- menu-mobile CSS -->
+      <link rel="stylesheet" type="text/css" href="{% static 'css/menu-mobile.css' %}">
+      <!-- revolution CSS -->
+      <link rel="stylesheet" type="text/css" href="{% static 'css/revolution.css' %}">
+      <link rel="stylesheet" type="text/css" href="{% static 'css/revolution2.css' %}">
+      <!-- swiper CSS -->
+      <link rel="stylesheet" type="text/css" href="{% static 'css/swiper.min.css' %}">
+      <link rel="stylesheet" type="text/css" href="{% static 'css/animate.min.css' %}">
+      <!-- Style CSS -->
+      <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+      <script src="js/ie9/html5shiv.min.js"></script>
+      <script src="js/ie9/respond.min.js"></script>
+      <![endif]-->
+   </head>
+   <body>
+      <div id="wapper">
+         <!-- header -->
+         <!-- PAGE HEADER -->
+        <header id="header" class="header-v2">
+            <div class="header-top">
+               <!-- logo -->
+               <div class="logo">
+                  <a href="{% url 'index' %}" title=""><img src="{% static 'images/logo2.png' %}" class="img-responsive" alt="Logo"></a>
+               </div>
+               <!-- navbar -->
+               <div class="header-nav">
+                  <!-- header-nav -->
+                  <div class="row">
+                     <div class="col-md-15">
+                        <nav class="navbar">
+                           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                              <ul class="nav navbar-nav engo-megamenu" style="display: inline;">
+<!--                                        <li class=" level-0">-->
+<!--                                            <a href="{% url 'index' %}">-->
+<!--                                                <span class="icon-home"></span>-->
+<!--                                            </a>-->
+<!--                                        </li>-->
+                                        <li class="level-0 has-mega dropdown aligned-fullwindown">
+                                            <a href="{% url 'all_products' %}">All Products</a>
+                                        </li>
+                                        <li class="level-0 has-mega dropdown aligned-fullwindown">
+                                            <a href="{% url 'about_us' %}">About Us</a>
+                                        </li>
+                                        <li class="level-0"><a href="{% url 'contact_us' %}">Contact Us</a></li>
+                                        <li class="level-0"><a href="{% url 'cart' %}">Cart</a></li>
+                                        <li class="level-0"><a href="{% url 'my_account' %}">My Account</a></li>
+                                    </ul>
+                           </div>
+                           <!-- /.navbar-collapse -->
+                        </nav>
+                     </div>
+                  </div>
+               </div>
+               <!-- header-quick-access -->
+
+            </div>
+            <!-- menu-mobile -->
+               <div id='cssmenu' >
+                <ul>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'all_products' %}">All Products</a></li>
+                    <li><a href="{% url 'about_us' %}">About Us</a></li>
+                    <li><a href="{% url 'contact_us' %}">Contact Us</a></li>
+                    <li><a href="{% url 'my_account' %}">My Account</a></li>
+                </ul>
+               </div>
+               <!--end menu-mobile  -->
+        </header>
+         <!-- /header -->
+         <!-- nav -->
+         <!-- end-nav -->
+         <!-- main page -->
+         {% block content %}
+
+         {% endblock %}
+         <!-- footer -->
+                <footer class="footer-v4">
+            <div class="top-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 top-footer-left contact-footer-left">
+                            <h2>Best Nutrition Products<span>  Pvt. Ltd</span></h2>
+                            <br>
+                            <!-- <h5>Open: 8:00 AM - Close: 17:00 PM</h5> -->
+                            <p>Best Nutrition Product Inc., USA, founded by Dr. Kumar Pati in 1995, offers a wide selection of Natural Food Supplements, Ayurvedic and Chinese Herbal Supplements, Vitamins, Minerals, Sports Nutrition and Diet products. </p>
+                            <ul class="contact-adress">
+                                <li><span><img src="{% static 'images/icon-maps.png' %}" alt=""></span>BEST NUTRITION PRODUCTS PVT LTD,
+                                    <li class="spacing-list">AL/1/A/1 STREET NO. 16,</li>
+                                    <li class="spacing-list">NEW TOWN KOLKATA – 700156</li>
+                                    <li class="spacing-list">WEST BENGAL, INDIA</li>
+                                    <li><span><img src="{% static 'images/icon-phone.png' %}" alt=""></span>+91 9830515307 </li>
+                                    <li><span><img src="{% static 'images/icon-evelop.png' %}" alt=""></span>bestnutrition16@gmail.com</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 top-footer-right ">
+                            <div class="newsletter-v2">
+                                <h2>NEWSLETTERS SUBSCRIPTION </h2>
+                                <form id="newsletter-validate-detail" method="POST" action="{% url 'subscribe' %}">
+                                    {% csrf_token %}
+                                    <div class="subcribe-info">
+                                        <input class="input-mail input-text required-entry validate-email" type="text" name="new_email" id="newsletter" title="Sign up for our newsletter" placeholder="Enter Your Mail...">
+                                        <button type="submit" title="Subscribe" class="button"><span>Join</span></button>
+                                    </div>
+                                </form>
+                                <p>Receive email-only deals, special offers &amp; product exclusives</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="header-footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 footer-info-left  ">
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-4">
+                                        <h3>Link</h3>
+                                        <ul>
+                                            <li><a href="{% url 'index' %}">Home</a></li>
+                                            <li><a href="{% url 'all_products' %}">All Products</a></li>
+                                            <li><a href="{% url 'about_us' %}">About Us</a></li>
+                                            <li><a href="{% url 'contact_us' %}">Contact Us</a></li>
+                                            <li><a href="{% url 'my_account' %}">My Account</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <h3>Get Help</h3>
+                                        <ul>
+                                            <li><a href="{% url 'contact_us' %}">Ask Question</a></li>
+                                            <li><a href="{% url 'site_map' %}">Site map</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <h3>Category</h3>
+                                        <ul>
+                                            <li><a href="{% url 'distributors' %}">Distributors</a></li>
+                                        </ul>
+                                    </div> 
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 footer-info-right">
+                                <div class="footer-support">
+                                    <h2>+ 91 9830515307</h2>
+                                    <p>Support <span>11:00</span> AM - <span>07:00</span> PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-footer">
+                    <div class="footer-copyright">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-7 col-60">
+                                    <address class="copyright">Copyright © 2020 by <a href="https://www.lifeproductions.in/" target="_blank">Life Productions </a>. All Rights Reserved.</address>
+                                </div>
+                                <div class="col-md-6 col-sm-5 col-40">
+                                    <div class="payment">
+                                        <a href="https://twitter.com/bnpofficial_in?lang=en" class="visa" target="_blank"><i class="twitter fa fa-twitter" aria-hidden="true"></i></a>
+                                        <a href="https://www.facebook.com/bestnutritionofficial/" class="american-express" target="_blank"><i class="facebook fa fa-facebook" aria-hidden="true"></i></a>
+                                        <a href="https://instagram.com/bestnutritionofficial?igshid=psmhcdb8279q" class="discover" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+         <!--end footer -->
+      </div>
+      <!-- jQuery -->
+      <script src="{% static 'js/jquery-1.11.min.js' %}"></script>
+      <!-- Bootstrap JavaScript -->
+      <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+      <!-- menu-mobile JavaScript -->
+      <script src="{% static 'js/menu-mobile.js' %}"></script>
+      <!-- Wocommerce JavaScript -->
+      <script src="{% static 'js/woocommerce.js' %}"></script>
+      <!-- Swiper JavaScript -->
+      <script src="{% static 'js/swiper.min.js' %}"></script>
+      <!-- zoom JavaScript -->
+      <script src="{% static 'js/jquery.elevatezoom.js' %}"></script>
+      <!-- Wocommerce JavaScript -->
+      <script src="{% static 'js/detail-product.js' %}"></script>
+      <script>
+         /** Tooltip **/ 
+          $('[data-toggle="tooltip"]').tooltip();
+         
+      </script>
+      <script>
+         //PAGE ABOUT
+            $(function () { 
+              $('.progress-bar [data-toggle="tooltip"]').tooltip({trigger: 'manual'}).tooltip('show');
+            });  
+         
+            $( window ).scroll(function() {   
+              // if($( window ).scrollTop() > 10){   scroll down abit and get the action   
+              $(".progress-bar").each(function(){
+                each_bar_width = $(this).attr('aria-valuenow');
+                $(this).width(each_bar_width + '%');
+              });
+                   
+             //  }  
+            });
+      </script>
+      <!-- main JavaScript -->
+      <script src="{% static 'js/functions.js' %}"></script>   
+   </body>
+</html>

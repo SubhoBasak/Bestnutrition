@@ -1,0 +1,646 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+
+<!-- Mirrored from www.bestnutrition.in/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Jun 2020 07:39:20 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BNP-Best Nutrition Products</title>
+    <!-- favicon -->
+    <link rel="icon" type="images/favicon" href="{% static 'images/favicon.png' %}">
+    <!-- menu-mobile CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/menu-mobile.css' %}">
+    <!-- revolution CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/revolution.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/revolution2.css' %}">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/swiper.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/animate.min.css' %}">
+    <!-- Style CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/ie9/html5shiv.min.js"></script>
+    <script src="js/ie9/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="wapper">
+        <header id="header" class="header-v1">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col header-menu-home-left ">
+                    <div class="header-logo">
+                        <a href="{% url 'index' %}" title="" class="logo"><img src="{% static 'images/home1/logo3.png' %}" alt=""></a>
+                    </div>
+                    <div class="top-header">
+                        <button class="btn-nav-icon  hidden-lg hidden-md">
+                            <span class="icon-bar top"></span>
+                            <span class="icon-bar middle"></span>
+                            <span class="icon-bar bottom"></span>
+                        </button>
+                        <!-- top_header_menu -->
+                        <div class="top_header_menu">
+                            <!-- header-quick-access -->
+                            <!-- vmenu_header -->
+                            <div id='cssmenu' class="cssmenu-mb">
+                                <ul>
+                                    <li><a href="{% url 'index' %}">Home</a></li>
+                                    <li><a href="{% url 'all_products' %}">All Products</a></li>
+                                    <li><a href="{% url 'about_us' %}">About Us</a></li>
+                                    <li><a href="{% url 'contact_us' %}">Contact Us</a></li>
+                                    <li><a href="{% url 'cart' %}">Cart</a></li>
+                                    <li><a href="{% url 'my_account' %}">My Account</a></li>
+                                </ul>
+                            </div>
+                            <div class="vmenu_header">
+                                <div class="vmenu-header-v3 ">
+
+                                    <div class="vmegamenu-contain" id="hl_body">
+                                        <!-- vmenu_header -->
+                                        <!-- nav-left -->
+                                        <div class="nav-left-sidebar-v2">
+                                            <div class="nav-left-sidebar-inner">
+                                                <div class="left-megamenu-content">
+                                                    <ul class="list-unstyled nav_vmegamenu">
+                                                        <li class="level0"><img src="{% static 'images/blank.png' %}" alt=""></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--end-nav-left -->
+                                        <!-- endvmenu_header -->
+                                    </div>
+                                    <!--  -->
+                                    <!--  -->
+                                </div>
+                                <!--end-nav-left -->
+                            </div>
+                            <!-- endvmenu_header -->
+                            <!-- link-follow -->
+                            <ul class="link-follow">
+                                <li><a class="twitter fa fa-twitter" style="color: #00acee;" href="https://twitter.com/bnpofficial_in?lang=en" target="_blank"><span>twitter</span></a></li>
+                                <li><a class="facebook fa fa-facebook" style="color: #3b5998;" href="https://www.facebook.com/bestnutritionofficial/" target="_blank"><span>facebook</span></a></li>
+                                 <li><a class="fa fa-instagram" style="color: #3f729b;" href="https://instagram.com/bestnutritionofficial?igshid=psmhcdb8279q" target="_blank"><span>instagram</span></a></li>
+                            </ul>
+                            <!--end link-follow -->
+                        </div>
+                        <!-- end top_header_menu -->
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-9 col header-menu-right-home">
+                    <div class="header-nav">
+                        <nav class="navbar">
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                <ul class="nav navbar-nav engo-megamenu">
+                                    <li><a class="active" href="#">Home</a></li>
+                                    <li class="level-0 has-mega aligned-right">
+                                        <a href="{% url 'all_products' %}">All Products</a>
+                                    </li>
+                                    <li class="level-0"><a href="{% url 'about_us' %}">About Us</a></li>
+<!--                                    <li class="level-0"><a href="{% url 'contact_us' %}">Contact Us</a></li>-->
+                                    <li class="level-0"><a href="{% url 'cart' %}">Cart</a></li>
+                                    <li class="level-0"><a href="{% url 'my_account' %}">My Account</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                    <!--  -->
+
+                    <!--  -->
+                    <div class="wide_layout relative w_xs_auto">
+                        <section class="revolution_slider">
+                            <div class="r_slider3">
+                                <ul>
+
+                                    <li class="f_left" data-transition="cube" data-slotamount="7" data-custom-thumb="{% static 'images/slide/h5.html' %}">
+                                        <img src="{% static 'images/slide/banner1.jpg' %}" alt="" data-bgrepeat="no-repeat" data-bgfit="cover" data-bgposition="center center">
+
+                                    </li>
+                                    <li class="f_left" data-transition="cube" data-slotamount="7" data-custom-thumb="{% static 'images/slide/h7.html' %}">
+                                        <img src="{% static 'images/slide/banner2.jpg' %}" alt="" data-bgrepeat="no-repeat" data-bgfit="cover" data-bgposition="center center">
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="main-home main-home-v1">
+            <div class="section">
+                <div class="row">
+                    <div class="bx-title yellow">
+                        <span>01</span>
+                        <h2 class="title-user">Best Selling Products</h2>
+                    </div>
+                </div>
+                <div class="row mgb30 ">
+                    <div class="banner-section-yellow">
+                        <div class="col-md-4 col-sm-4 banner-section banner-section-left wow fadeInUp animated " data-wow-duration="1s">
+                            <img class="img-responsive" src="{% static 'images/home1/405x392_1.png' %}" alt="">
+                            <div class="content">
+                                <h2 class="first" style="visibility: hidden;">Cross Trainers</h2>
+                                <h2 class="second" style="visibility: hidden;">Equipment</h2>
+                                <a class="view-link" href="{% url 'all_products' %}">View all</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 banner-section-center  wow fadeInUp animated " data-wow-duration="1s">
+                            <div class="banner-box-detail">
+                                <a href="#">
+                                    <img class="img-responsive" src="{% static 'images/home1/sale1.png' %}" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 banner-section banner-section-right wow fadeInUp animated " data-wow-duration="1s">
+                            <img class="img-responsive" src="{% static 'images/home1/405x392_2.png' %}" alt="">
+                            <div class="content">
+                                <h2 class="first" style="visibility: hidden;">Exercise Bike</h2>
+                                <h2 class="second" style="visibility: hidden;">Equipmen</h2>
+                                <a class="view-link" href="{% static 'all_products' %}">View all</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="popularproduct ">
+                        <div class="products-grid">
+                            <!-- Swiper -->
+                            <div class="swiper-container" id="popularproduct">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide wow fadeInUp animated " data-wow-duration="1s" data-wow-delay="100ms">
+                                        <!-- item-inner -->
+                                        <div class="item-inner">
+                                            <div class="box-images">
+                                                <a class="product-image" href="{% url 'details' 1 %}" title=""><img src="{% static 'images/home4/products/amla.png' %}" alt=""></a>
+                                            </div>
+                                            <div class="product-shop">
+                                                <h2 class="product-name">
+                        <a href="{% url 'details' 1 %}" title="">Amla</a>
+                        </h2>
+                                                <div class="sub-name">Amla may be therapeutic as a digestive aid. It promotes</div>
+                                            </div>
+                                        </div>
+                                        <!--end item-inner -->
+                                    </div>
+                                    <div class="swiper-slide wow fadeInUp animated " data-wow-duration="1s" data-wow-delay="300ms">
+                                        <!-- item-inner -->
+                                        <div class="item-inner">
+                                            <div class="box-images">
+                                                <a class="product-image" href="{% url 'details' 2 %}" title=""><img src="{% static 'images/home4/products/arjuna.png' %}" alt=""></a>
+                                            </div>
+                                            <div class="product-shop">
+                                                <h2 class="product-name">
+                                                    <a href="{% url 'details' 2 %}" title="">Arjuna</a>
+                                                </h2>
+                                                <div class="sub-name">Arjuna has been used for centuries in ayurvedic</div>
+                                            </div>
+                                        </div>
+                                        <!--end item-inner -->
+                                    </div>
+                                    <div class="swiper-slide wow fadeInUp animated " data-wow-duration="1s" data-wow-delay="500ms">
+                                        <!-- item-inner -->
+                                        <div class="item-inner">
+                                            <div class="box-images">
+                                                <a class="product-image" href="{% url 'details' 3 %}" title=""><img src="{% static 'images/home4/products/aswagandha.png' %}" alt=""></a>
+                                            </div>
+                                            <div class="product-shop">
+                                                <h2 class="product-name">
+                        <a href="{% url 'details' 3 %}" title="">Aswagandha</a>
+                        </h2>
+                                                <div class="sub-name">Aswagandha is regarded as one of the most valuable </div>
+                                            </div>
+                                        </div>
+                                        <!--end item-inner -->
+                                    </div>
+                                    <div class="swiper-slide wow fadeInUp animated " data-wow-duration="1s" data-wow-delay="700ms">
+                                        <!-- item-inner -->
+                                        <div class="item-inner">
+                                            <div class="box-images">
+                                                <a class="product-image" href="{% url 'details' 4 %}" title=""><img src="{% static 'images/home4/products/bramhi.png' %}" alt=""></a>
+                                            </div>
+                                            <div class="product-shop">
+                                                <h2 class="product-name">
+                        <a href="{% url 'details' 4 %}" title="">Bramhi</a>
+                        </h2>
+                                                <div class="sub-name">Brahmi may be used as a brain tonic to support memory, </div>
+                                            </div>
+                                        </div>
+                                        <!--end item-inner -->
+                                    </div>
+                                    <div class="swiper-slide wow fadeInUp animated " data-wow-duration="1s" data-wow-delay="900ms">
+                                        <!-- item-inner -->
+                                        <div class="item-inner">
+                                            <div class="box-images">
+                                                <a class="product-image" href="{% url 'details' 5 %}" title=""><img src="{% static 'images/home4/products/curcumin.png' %}" alt=""></a>
+                                            </div>
+                                            <div class="product-shop">
+                                                <h2 class="product-name">
+                        <a href="{% url 'details' 5 %}" title="">Curcumin</a>
+                        </h2>
+                                                <div class="sub-name">Curcumin purify the blood,act as an anti-bacterial</div>
+                                            </div>
+                                        </div>
+                                        <!--end item-inner -->
+                                    </div>
+                                    <div class="swiper-slide wow fadeInUp animated " data-wow-duration="1s" data-wow-delay="900ms">
+                                        <!-- item-inner -->
+                                        <div class="item-inner">
+                                            <div class="box-images">
+                                                <a class="product-image" href="{% url 'details' 6 %}" title=""><img src="{% static 'images/home4/products/garcinia.png' %}" alt=""></a>
+                                            </div>
+                                            <div class="product-shop">
+                                                <h2 class="product-name">
+                        <a href="{% url 'details' 6 %}" title="">Garcinia</a>
+                        </h2>
+                                                <div class="sub-name">Garcinia reduces appetite and promotes fat burning</div>
+                                            </div>
+                                        </div>
+                                        <!--end item-inner -->
+                                    </div>
+                                    <div class="swiper-slide wow fadeInUp animated " data-wow-duration="1s" data-wow-delay="900ms">
+                                        <!-- item-inner -->
+                                        <div class="item-inner">
+                                            <div class="box-images">
+                                                <a class="product-image" href="{% url 'details' 7 %}" title=""><img src="{% static 'images/home4/products/glucosamine.png' %}" alt=""></a>
+                                            </div>
+                                            <div class="product-shop">
+                                                <h2 class="product-name">
+                        <a href="{% url 'details' 7 %}" title="">Glucosamine</a>
+                        </h2>
+                                                <div class="sub-name">Glucosamine & Chondroitin are two remarkable compounds</div>
+                                            </div>
+                                        </div>
+                                        <!--end item-inner -->
+                                    </div>
+                                    <div class="swiper-slide wow fadeInUp animated " data-wow-duration="1s" data-wow-delay="900ms">
+                                        <!-- item-inner -->
+                                        <div class="item-inner">
+                                            <div class="box-images">
+                                                <a class="product-image" href="{% url 'details' 9 %}" title=""><img src="{% static 'images/home4/products/gymnema.png' %}" alt=""></a>
+                                            </div>
+                                            <div class="product-shop">
+                                                <h2 class="product-name">
+                        <a href="{% url 'details' 9 %}" title="">Gymnema</a>
+                        </h2>
+                                                <div class="sub-name">Gymnema Sylvestre used as a natural supplement for</div>
+                                            </div>
+                                        </div>
+                                        <!--end item-inner -->
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- Add Arrows -->
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--  -->
+
+            <!--  -->
+            <div class="section">
+                <div class="row">
+                    <div class="bx-title blue">
+                        <span>02</span>
+                        <h2 class="title-user">Ayurvedic Nutrition</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="blog-wrapper blog-wapper-blue">
+                        <div class="blog-wrapper-content">
+                            <div class="col-md-6 col-xs-12 ">
+                                <div class="item-blog box-content big-box ">
+                                    <div class="scale">
+                                        <a href="{% url 'details' 2 %}" title=""><img src="{% static 'images/home1/928x634.jpg' %}" class="img-responsive" alt=""></a>
+                                    </div>
+                                    <div class="box-info ">
+                                        <a class="post-name" href="{% url 'details' 2 %}">
+                                        &nbsp;
+                                        </a>
+                                        <div class="des">
+                                            <p>Arjuna has been used for centuries in ayurvedic medicine. Bark of Arjuna tree has been found to be rich Co- enzyme Q-10 which helps support cardiovascular health. It may help lower systolic blood pressure level.</p>
+                                            <p>For adults take 1 capsules daily, or as recommended by your health care professional.</p>
+                                        </div>
+                                        <a class="view-link" href="{% url 'details' 2 %}">View more</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 ">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="item-blog box-content ">
+                                            <div class="scale">
+                                                <a href="{% url 'details' 16 %}" title=""><img src="{% static 'images/home1/img_jm-1.jpg' %}" class="img-responsive" alt=""></a>
+                                            </div>
+                                            <div class=" box-info ">
+                                                <a class="post-name" href="{% url 'details' 16 %}">
+                         Tulsi is good for common colds,coughs and flu. According to ayurveda.
+                        </a>
+                                                <a class="view-link" href="{% url 'details' 16 %}">View more</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="item-blog box-content">
+                                            <div class="scale">
+                                                <a href="{% url 'details' 15 %}"><img src="{% static 'images/home1/img_jm-2.jpg' %}" class="img-responsive" alt=""></a>
+                                            </div>
+                                            <div class="box-info ">
+                                                <a class="post-name" href="{% url 'details' 15 %}">
+                          Triphala used to improve digestive health, which helps heal
+                        </a>
+                                                <!-- <p class="author"><i class="fa fa-pencil-square-o"></i> By Sir Lucas Leftfoot</p> -->
+                                                <a class="view-link" href="{% url 'details' 15 %}">View more</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="item-blog box-content ">
+                                            <div class="scale">
+                                                <a href="{% url 'details' 8 %}" title=""><img src="{% static 'images/home1/img_jm-3.jpg' %}" class="img-responsive" alt=""></a>
+                                            </div>
+                                            <div class="box-info ">
+                                                <a class="post-name" href="{% url 'details' 8 %}">
+                         Guduchi is recognized to accord longevity, enhances memory
+                        </a>
+                                                <!-- <p class="author"><i class="fa fa-pencil-square-o"></i> By Sir Lucas Leftfoot</p> -->
+                                                <a class="view-link" href="{% url 'details' 8 %}">View more</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="item-blog box-content ">
+                                            <div class="scale">
+                                                <a href="{% url 'details' 12 %}" title=""><img src="{% static 'images/home1/img_jm-4.jpg' %}" class="img-responsive" alt=""></a>
+                                            </div>
+                                            <div class="box-info ">
+                                                <a class="post-name" href="{% url 'details' 12 %}">
+                          Neem helps detoxify the body and purify the blood. It promotes healthy 
+                        </a>
+                                                <!-- <p class="author"><i class="fa fa-pencil-square-o"></i> By Sir Lucas Leftfoot</p> -->
+                                                <a class="view-link" href="{% url 'details' 12 %}">View more</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- brank-logo -->
+            <div class="brank-logo brank-logo-border">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="swiper-container" id="brank-logo">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <a href="{% url 'details' 5 %}" title=""><img src="{% static 'images/home2/curcumin.png' %}" alt=""></a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="{% url 'details' 1 %}" title=""><img src="{% static 'images/home2/amla.png' %}" alt=""></a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="{% url 'details' 2 %}" title=""><img src="{% static 'images/home2/arjuna.png' %}" alt=""></a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="{% url 'details' 3 %}" title=""><img src="{% static 'images/home2/aswagandha.png' %}" alt=""></a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="{% url 'details' 4 %}" title=""><img src="{% static 'images/home2/bramhi.png' %}" alt=""></a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="{% url 'details' 6 %}" title=""><img src="{% static 'images/home2/garcinia.png' %}" alt=""></a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="{% url 'details' 7 %}" title=""><img src="{% static 'images/home2/glucosamine.png' %}" alt=""></a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="{% url 'details' 10 %}" title=""><img src="{% static 'images/home2/haritaki.png' %}" alt=""></a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="{% url 'details' 11 %}" title=""><img src="{% static 'images/home2/moringa.png' %}" alt=""></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end-brank-logo -->
+        </section>
+        <!-- footer -->
+        <footer class="footer-v4">
+            <div class="top-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 top-footer-left contact-footer-left">
+                            <h2>Best Nutrition Products<span>  Pvt. Ltd</span></h2>
+                            <br>
+                            <!-- <h5>Open: 8:00 AM - Close: 17:00 PM</h5> -->
+                            <p>Best Nutrition Product Inc., USA, founded by Dr. Kumar Pati in 1995, offers a wide selection of Natural Food Supplements, Ayurvedic and Chinese Herbal Supplements, Vitamins, Minerals, Sports Nutrition and Diet products. </p>
+                            <ul class="contact-adress">
+                                <li><span><img src="{% static 'images/icon-maps.png' %}" alt=""></span>BEST NUTRITION PRODUCTS PVT LTD,
+                                    <li class="spacing-list">AL/1/A/1, STREET NO. 16,</li>
+                                    <li class="spacing-list">NEW TOWN, KOLKATA – 700156</li>
+                                    <li class="spacing-list">WEST BENGAL, INDIA</li>
+                                    <li><span><img src="{% static 'images/icon-phone.png' %}" alt=""></span>+91 9830515307 </li>
+                                    <li><span><img src="{% static 'images/icon-evelop.png' %}" alt=""></span>bestnutrition16@gmail.com</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 top-footer-right ">
+                            <div class="newsletter-v2">
+                                <h2>NEWSLETTERS SUBSCRIPTION </h2>
+                                <form id="newsletter-validate-detail" method="POST" action="{% url 'subscribe' %}">
+                                    {% csrf_token %}
+                                    <div class="subcribe-info">
+                                        <input class="input-mail input-text required-entry validate-email" type="text" name="email" id="newsletter" title="Sign up for our newsletter" placeholder="Enter Your Mail...">
+                                        <button type="submit" title="Subscribe" class="button"><span>Join</span></button>
+                                    </div>
+                                </form>
+                                <p>Receive email-only deals, special offers &amp; product exclusives</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="header-footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 footer-info-left  ">
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-4">
+                                        <h3>Link</h3>
+                                        <ul>
+                                            <li><a href="{% url 'index' %}">Home</a></li>
+                                            <li><a href="{% url 'all_products' %}">All Products</a></li>
+                                            <li><a href="{% url 'about_us' %}">About Us</a></li>
+                                            <li><a href="{% url 'contact_us' %}">Contact Us</a></li>
+                                            <li><a href="{% url 'cart' %}">Cart</a></li>
+                                            <li><a href="{% url 'my_account' %}">My Account</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <h3>Get Help</h3>
+                                        <ul>
+                                            <li><a href="{% url 'contact_us' %}">Ask Question</a></li>
+                                            <li><a href="{% url 'site_map' %}">Site map</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <h3>Category</h3>
+                                        <ul>
+                                            <li><a href="{% url 'distributors' %}">Distributors</a></li>
+                                        </ul>
+                                    </div> 
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 footer-info-right">
+                                <div class="footer-support">
+                                    <h2>+ 91 9830515307</h2>
+                                    <p>Support <span>11:00</span> AM - <span>07:00</span> PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-footer">
+                    <div class="footer-copyright">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-7 col-60">
+                                    <address class="copyright">Copyright © 2020 by <a href="https://www.lifeproductions.in/" target="_blank">Life Productions </a>. All Rights Reserved.</address>
+                                </div>
+                                <div class="col-md-6 col-sm-5 col-40">
+                                    <div class="payment">
+                                        <a href="https://twitter.com/bnpofficial_in?lang=en" class="visa" target="_blank"><i class="twitter fa fa-twitter" aria-hidden="true"></i></a>
+                                        <a href="https://www.facebook.com/bestnutritionofficial/" class="american-express" target="_blank"><i class="facebook fa fa-facebook" aria-hidden="true"></i></a>
+                                        <a href="https://instagram.com/bestnutritionofficial?igshid=psmhcdb8279q" class="discover" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- end-footer -->
+    </div>
+    <!-- jQuery -->
+    <script src="{% static 'js/jquery-1.11.min.js' %}"></script>
+    <script>
+        jQuery(document).ready(function($) {
+            $(".top-header .btn-nav-icon").click(function() {
+                $(".top-header").toggleClass("highlight");
+            });
+        })
+    </script>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/menu-mobile.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <script>
+        $(function() {
+            $('[data-toggle="tooltip"]').tooltip()
+        });
+    </script>
+    <script>
+        new WOW().init();
+    </script>
+    <script src="{% static 'js/woocommerce.js' %}"></script>
+    <script src="{% static 'js/jquery.themepunch.plugins.min.js' %}"></script>
+    <script src="{% static 'js/jquery.themepunch.revolution.min.js' %}"></script>
+    <script src="{% static 'js/scripts-revolution.js' %}"></script>
+    <!-- swiper JavaScript -->
+    <script src="{% static 'js/swiper.min.js' %}"></script>
+    <script src="{% static 'js/functions.js' %}"></script>
+    <script>
+        $(window).load(function() {
+            var width = $(window).width()
+            if (width >= 1024) {
+                $('#myModal').modal('show');
+            }
+
+        });
+    </script>
+    <script>
+        $(window).load(function() {
+            var width = $(window).width();
+            if (width >= 1200) {
+                var win = $('.r_slider3').height();
+                $(".header-menu-home-left").css({
+                    "height": win
+                });
+
+            }
+            $(window).on('resize', function() {
+                var widthz = $(window).width();
+                if (widthz < 1200) {
+                    $(".header-menu-home-left").css({
+                        "height": "auto"
+                    });
+
+                }
+            });
+        });
+    </script>
+    <!-- <div class="container-fluid popup-layout ">
+    <div class="row">
+      <div class="modal fade bs-example-modal-lg " id="myModal" tabindex="-1" role="dialog"  aria-hidden="true">
+        <div class="modal-dialog modal-lg " >
+          <div class="modal-content">
+            <div class="modal-header">
+              <div class="close-modal">
+                <a href="#"  data-dismiss="modal">
+                </a>
+              </div>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-7">
+                  <div class="popup-content">
+                    <h3>Get Our Email Letter </h3>
+                    <p>Subscribe to the Boutique mailing list to receive updates on new arrivals, special offers and other discount information.</p>
+                    <form  id="newsletter-validate-detail1">
+                      <div class="subcribe-info">
+                        <input class="input-mail input-text required-entry validate-email" type="text" name="email" id="newsletter1" title="Sign up for our newsletter" placeholder="Enter Your Mail...">
+                        <button type="submit" title="Subscribe" class="button"><span><span>Subscribe</span></span></button>
+                      </div>
+                    </form>
+                  </div>
+
+                </div>
+                <div class="col-md-5"></div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <div class="again-popup">
+                <div class="checkbox">
+                  <input type="checkbox" value="cheque" name="payment_method" id="payment_method">
+                  <label for="payment_method">Do not show this popup again </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+</body>
+
+
+<!-- Mirrored from www.bestnutrition.in/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Jun 2020 07:41:12 GMT -->
+</html>

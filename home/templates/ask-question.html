@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Ask question</title>
+{% endblock %}
+
+{% block content %}
+         <section class="main-home">
+             {% if submit %}
+                 <div class="alert alert-success">
+                     <p>Your question has been submited. We will answer it as soon as possible.</p>
+                 </div>
+             {% endif %}
+            <div class="container">
+               <div class="row">
+                  <!-- breadcrumb -->
+                  <div class="col-md-12">
+                     <div class="breadcrumb-grid breadcrumb-about">
+                        <ul class="breadcrumb">
+                           <li><a href="index-2.html">Home</a></li>
+                           <li class="active"><a href="#">Ask Question</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <!-- end breadcrumb -->
+               </div>
+               <div class="row ">
+                     <div class="contact-page">
+                        <div class="col-md-6 col-sm-6">
+                        <div class="contact-page-left">
+                           <div class="title-block">
+                              <h2>Ask Question</h2>
+                           </div>
+                           <form  method="POST">
+                               {% csrf_token %}
+                               <input type="hidden" name="product_id" value="{{product_id}}">
+                              <div class="form-group">
+                                  <label >Name <span>*</span></label>
+                                  <input  class="form-control input-post" name="your_name">
+                              </div>
+                              <div class="form-group">
+                                  <label>Email adress <span>*</span></label>
+                                  <input class="form-control input-post" name="your_email">
+                              </div>
+                              <div class="form-group">
+                                 <label >Subject </label>
+                                 <input  class="form-control input-post" name="your_subject">
+                              </div>
+                              <div class="form-group">
+                                       <label >Question </label>
+                                       <textarea class="form-control input-post form-comment" name="your_question" rows="3"></textarea>
+                                </div>
+                                <p class="form-submit">
+                                   <button class="button hover-rhv-float" type="submit">Submit</button>
+                                </p>
+                           </form>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-sm-6">
+                        <div class="contact-page-right">
+                           <div class="title-block">
+                              <h2>Best Nutrition Product</h2>
+                           </div>
+                           <div class="contact-info">
+                              <p>
+                                 Best Nutrition Product Inc., USA, founded by Dr. Kumar Pati in 1995, offers a wide selection of Natural Food Supplements, Ayurvedic and Chinese Herbal Supplements, Vitamins, Minerals, Sports Nutrition and Diet products. We have Melatonin, DHEA, Shark Cartilage, Squalene, Moringa, Garcinia, Milk Thistle, Gymnema, Ashwagandha and over 130 other products. All products are high quality with nutritional facts. For thousands of years, Chinese and Ayurvedic herbal formulas have been used in Asia as well as other parts of the world.
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                     </div>
+               </div>
+            </div>
+         </section>
+{% endblock %}

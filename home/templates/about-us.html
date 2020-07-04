@@ -1,0 +1,274 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+   <title>About-us</title>
+{% endblock %}
+
+{% block content %}
+   <section class="main-home">
+      <div class="container">
+         <div class="row">
+            <!-- breadcrumb -->
+            <div class="col-md-12">
+               <div class="breadcrumb-grid ">
+                  <ul class="breadcrumb">
+                     <li><a href="{% url 'index' %}">Home</a></li>
+                     <li class="active"><a href="#">About Us</a></li>
+                  </ul>
+               </div>
+            </div>
+            <!-- end breadcrumb -->
+         </div>
+         <div class="row">
+            <div class="contact-page ">
+               <div class="col-md-12">
+                  <div class="about-page">
+                     <div class="about-page-images">
+                        <img src="{% static 'images/1920x500.jpg' %}" alt="">
+                     </div>
+                     <div class="title-block">
+                        <h2>Best Nutrition's Health Supplements For A Healthy Life Style</h2>
+                        <br>
+                        <p>Best Nutrition Product Inc., USA, manufactures a large number of vitamins, minerals, sports nutrition and diet products. We have Melatonin, DHEA, Shark Cartilage, Cat's Claw, Pycnogenol, Noni, Kava Kava, Ginkgo, St.John's Wart, Multivitamins, Ginseng and over 130 other products. All products are high quality with nutritional facts. For thousands of years, Chinese and Ayurvedic herbal formulas have been used in Asia as well as other parts of the world. These special nutritional formulas have been designed for the benefit of good health. Best Nutrition offers unique nutritional formulas,because prevention is the best alternative medicine for a healthy lifestyle</p>
+                        <br>
+                        <p>Best Nutrition Products Inc. has built a state-of-the-art manufacturing unit called Biotechayur Pvt Ltd in Balasore, Odisha, India for extraction of medicinal plants. Biotechayur produces the highest quality standardized extracts, nutritional supplements, enzymes, proteins and Amino Acids and many other raw materials.</p>
+                     </div>
+
+                     <div class="title-block">
+                        <h2>Company Profile</h2>
+                        <br>
+                        <p>Dr. Abhay Kumar Pati, also known as Dr. Kumar Pati, is the founder of Best Nutrition Products, Inc., USA. The company was started by Dr. Pati in 1994. Prior to establishing Best Nutrition Products, Inc. Dr. Pati was engaged in publishing a health magazine - known as “Health World”, which had a large circulation. As the internet became more popular, his magazine readership declined. Subsequently, he formulated a few health supplements. Currently, Best Nutrition Products has over 200 health products</p>
+                        <br>
+                        <p> Dr. Pati is an integrated physician, who studied both modern medicine and the traditional medicine of India, Ayurvedic medicine. A graduate of J. B. Roy State College of Ayurvedic Medicine & Hospital, (known also as Asthanga Ayurvedic College) in Kolkata India, was one of India's oldest educational institution in Ayurvedic medicine. This college was founded in 1916 by Doctor and Pandit Jamini Bhushan Ray, Mahatma Gandhi and Sardar Vallabhbhai Patel.</p>
+                        <br>
+                        <p>Dr. Abhay Kumar Pati (BAMS, MASF ) is the key and sole founder of Biotechayur R&D laboratory and Biotechayur manufacturing unit .</p>
+                        <br>
+                        <p>Dr. Abhay Kumar Pati is an author of half a dozen books on nutrition and vitamins. Titles include: Ayurvedic Medicinal Plants of India, Vitamins & Herbal Digest, A Guide to Alternative Health Therapies, Medicinal Plants of India and Fruits of the World. These publications are available on Amazon.com and 72 other websites.</p>
+                     </div>
+                  </div>
+               </div>
+               <!-- <div class="col-md-6 col-sm-6">
+                  <div class="contact-page-left">
+                     <div class="title-block">
+                        <h2>Who are you ?</h2>
+                     </div>
+                     <div class="accordion accordion-v3 noborder collapse-right">
+                        <div class="panel-group " id="accordion" role="tablist" aria-multiselectable="true">
+                           <div class="panel panel-default">
+                              <div class="panel-heading" role="tab" id="headingOne">
+                                 <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    OUR MISSON
+                                    </a>
+                                 </h4>
+                              </div>
+                              <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                 <div class="panel-body">
+                                    Ut enim ad minim et ven veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex commodo consequat. Duis aute irure dolor in reprehenderit in voluptate. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim et ven veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex commodo consequat.
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="panel panel-default">
+                              <div class="panel-heading" role="tab" id="headingTwo">
+                                 <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    WHAT WE DO ?
+                                    </a>
+                                 </h4>
+                              </div>
+                              <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                 <div class="panel-body">
+                                    Ut enim ad minim et ven veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex commodo consequat. Duis aute irure dolor in reprehenderit in voluptate. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim et ven veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex commodo consequat. 
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="panel panel-default">
+                              <div class="panel-heading" role="tab" id="headingThree">
+                                 <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    OUR CLIENTS
+                                    </a>
+                                 </h4>
+                              </div>
+                              <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                 <div class="panel-body">
+                                    Ut enim ad minim et ven veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex commodo consequat. Duis aute irure dolor in reprehenderit in voluptate. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim et ven veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex commodo consequat.
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-6 col-sm-6">
+                  <div class="contact-page-right">
+                     <div class="title-block">
+                        <h2>Company Productivity </h2>
+                     </div>
+                     <div class="about-page-skills">
+                        <div class="barWrapper">
+                           <span class="progressText"><B>PROBLAM SOLVING</B></span>
+                           <div class="progress">
+                              <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" >   
+                                 <span  class="popOver" data-toggle="tooltip" data-placement="top" title="85%"> </span>     
+                              </div>
+                           </div>
+                           <div class="barWrapper">
+                              <span class="progressText"><B>ORGANISATION</B></span>
+                              <div class="progress ">
+                                 <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" >
+                                    <span  class="popOver" data-toggle="tooltip" data-placement="top" title="75%"> </span>  
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="barWrapper">
+                              <span class="progressText"><B>CRITICAL THINKING</B></span>
+                              <div class="progress">
+                                 <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                                    <span  class="popOver" data-toggle="tooltip" data-placement="top" title="95%"> </span>  
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="barWrapper">
+                              <span class="progressText"><B>SREVICE</B></span>
+                              <div class="progress">
+                                 <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                                    <span  class="popOver" data-toggle="tooltip" data-placement="top" title="80%"> </span>  
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-12">
+                  <div class="title-block">
+                     <h2>Our Team Members</h2>
+                  </div>
+               </div>
+               <div class="col-md-4 col-sm-6 col-xs-6 teamlist-mb">
+                  <div class="team-list">
+                     <div class="row">
+                        <div class="col-lg-5 col-md-5 col-xs-12">
+                           <div class="team-header">
+                              <img class="img-responsive" src="images/135x133.jpg" alt="">   
+                           </div>
+                        </div>
+                        <div class="col-lg-7 col-md-7 col-xs-12 team-body-text">
+                           <div class="team-body">
+                              <div class="team-body-content">
+                                 <h3 class="team-name">john doe</h3>
+                                 <p class="team-position">Project Manager</p>
+                              </div>
+                              <div class="team-info">
+                                 <p>Email: hoanglam1607@gmail.com</p>
+                                 <p>Mobile:+84 988 992 085 </p>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-md-12 col-xs-12">
+                           <div class="team-bottom">
+                              <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+                           </div>
+                           <aside class="social-sidebar-right">
+                              <div class="">
+                                 <ul>
+                                    <li><a href="" title=""><i class="fa fa-facebook social"></i></a></li>
+                                    <li><a href="" title=""><i class="fa fa-twitter social"></i></a></li>
+                                    <li><a href="" title=""><i class="fa fa-pinterest-p social"></i></a></li>
+                                    <li><a href="" title=""><i class="fa fa-google-plus social"></i></a></li>
+                                    <li><a href="" title=""><i class="fa fa-linkedin social"></i></a></li>
+                                 </ul>
+                              </div>
+                           </aside>
+                        </div>
+                     </div>
+                  </div>
+               </div> -->
+               <!--  -->
+              <!--  <div class="col-md-4 col-sm-6 col-xs-6 teamlist-mb">
+                 <div class="team-list">
+                    <div class="row">
+                       <div class="col-lg-5 col-md-5">
+                          <div class="team-header">
+                             <img class="img-responsive" src="images/135x133.jpg" alt="">   
+                          </div>
+                       </div>
+                       <div class="col-lg-7 col-md-7 team-body-text">
+                          <div class="team-body">
+                             <div class="team-body-content">
+                                <h3 class="team-name">john doe</h3>
+                                <p class="team-position">Project Manager</p>
+                             </div>
+                             <div class="team-info">
+                                <p>Email: hoanglam1607@gmail.com</p>
+                                <p>Mobile:+84 988 992 085 </p>
+                             </div>
+                          </div>
+                       </div>
+                       <div class="col-md-12">
+                          <div class="team-bottom">
+                             <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+                          </div>
+                          <aside class="social-sidebar-right">
+                             <div class="">
+                                <ul>
+                                   <li><a href="" title=""><i class="fa fa-facebook social"></i></a></li>
+                                   <li><a href="" title=""><i class="fa fa-twitter social"></i></a></li>
+                                   <li><a href="" title=""><i class="fa fa-pinterest-p social"></i></a></li>
+                                   <li><a href="" title=""><i class="fa fa-google-plus social"></i></a></li>
+                                   <li><a href="" title=""><i class="fa fa-linkedin social"></i></a></li>
+                                </ul>
+                             </div>
+                          </aside>
+                       </div>
+                    </div>
+                 </div>
+              </div> -->
+               <!--  -->
+               <!-- <div class="col-md-4 col-sm-6 col-xs-6 teamlist-mb">
+                  <div class="team-list">
+                     <div class="row">
+                        <div class="col-lg-5 col-md-5">
+                           <div class="team-header">
+                              <img class="img-responsive" src="images/135x133.jpg" alt="">   
+                           </div>
+                        </div>
+                        <div class="col-lg-7 col-md-7 team-body-text">
+                           <div class="team-body">
+                              <div class="team-body-content">
+                                 <h3 class="team-name">john doe</h3>
+                                 <p class="team-position">Project Manager</p>
+                              </div>
+                              <div class="team-info">
+                                 <p>Email: hoanglam1607@gmail.com</p>
+                                 <p>Mobile:+84 988 992 085 </p>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-md-12">
+                           <div class="team-bottom">
+                              <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+                           </div>
+                           <aside class="social-sidebar-right">
+                              <div class="">
+                                 <ul>
+                                    <li><a href="" title=""><i class="fa fa-facebook social"></i></a></li>
+                                    <li><a href="" title=""><i class="fa fa-twitter social"></i></a></li>
+                                    <li><a href="" title=""><i class="fa fa-pinterest-p social"></i></a></li>
+                                    <li><a href="" title=""><i class="fa fa-google-plus social"></i></a></li>
+                                    <li><a href="" title=""><i class="fa fa-linkedin social"></i></a></li>
+                                 </ul>
+                              </div>
+                           </aside>
+                        </div>
+                     </div>
+                  </div>
+               </div> -->
+               <!--  -->
+            </div>
+         </div>
+      </div>
+   </section>
+{% endblock %}

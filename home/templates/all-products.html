@@ -1,0 +1,316 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>All-products</title>
+{% endblock %}
+
+{% block content %}
+    <section class="main-home">
+        <div class="container">
+            <div class="row">
+                <!-- breadcrumb -->
+                <div class="col-md-12">
+                    <div class="breadcrumb-grid ">
+                        <ul class="breadcrumb">
+                            <li><a href="{% url 'index' %}">Home</a></li>
+                            <li class="active"><a href="#">All Products</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- end breadcrumb -->
+            </div>
+            <div class="row">
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 col-col-right">
+                    <div class="main-home-page-right-content main-home-page-right-content-grid">
+                        <div class="right-content-detail">
+                            <!-- banner -->
+                            <div class="banner-grid scale">
+                                <img src="{% static 'images/grid/870x293.jpg' %}" alt="">
+                            </div>
+                            <!--products-top-title -->
+                            <div class="products-top-title">
+                            </div>
+                            <!--end products-top-title -->
+                            <!-- bestsellerproduct -->
+                            <div class="product-view-grid" id="tabs-grid">
+                                <div class="products-grid row">
+                                    {% for prod in prod_s %}
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 products-mb">
+                                            <!-- item-inner -->
+                                            <div class="item-inner">
+                                                <div class="box-images">
+                                                    <a class="product-image" href="{% url 'details' prod.id %}" title=""><img src="{{prod.thumbnail.url}}" alt=""></a>
+                                                </div>
+                                                <div class="product-shop">
+                                                    <h2 class="product-name">
+                     <a href="{% url 'details' prod.id %}" title="">{{prod.name}}</a>
+                     </h2>
+                                                    <div class="sub-name">{{prod.subname|slice:":20"}}</div>
+                                                    <div class="price-box">
+                                                        <p class="special-price">
+                                                            <span class="price-label">Special Price</span>
+                                                            <span class="price">Rs.{{prod.price}}/-</span>
+                                                        </p>
+                                                    </div>
+                                                    <ul class="add-to-links">
+                                                        <li class="cart">
+                                                            <a href="{% url 'details' prod.id %}" class="view-link" title="">Read More</a>
+                                                        </li>
+                                                        <li class="wishlist">&nbsp;</li>
+                                                    </ul>
+                                                </div>
+                                                <!-- <div class="label-new">
+                     New
+                  </div> -->
+                                            </div>
+                                            <!--end item-inner -->
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class="product-view-list" style="display:none" id="tabs-list">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="product-view-list-detail product-view-list-detail1">
+                                            <div class="col-md-4">
+                                                <div class="product-view-list-img">
+                                                    <img src="images/home4/products/300x300.jpg" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="product-view-list-text">
+                                                    <h2 class="product-name">
+                    <a href="#" title="">Nike JorDan CP3</a>
+                    </h2>
+                                                    <div class="sub-name">Mens Trainning Shoe</div>
+                                                    <div class="description">
+                                                        <p><span>Description:</span></p>
+                                                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
+                                                    </div>
+                                                    <div class="price-box">
+                                                        <p class="special-price">
+                                                            <span class="price-label">Special Price</span>
+                                                            <span class="price">$85.00</span>
+                                                        </p>
+                                                        <p class="old-price">
+                                                            <span class="price-label">Special Price</span>
+                                                            <span class="price">$89.00</span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="color-option">
+                                                        <ul>
+                                                            <li>
+                                                                <p>Color:</p>
+                                                            </li>
+                                                            <li><span></span></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                    <div class="size-option">
+                                                        <p>Size: XL</p>
+                                                    </div>
+                                                    <div class="addtobag-wishlist">
+                                                        <div class="add-to-bag">
+                                                            <button type="button" class="hover-rhv-float button btn-cart" data-original-title="Add to bag" rel="tooltip"><span><span>Add to bag</span></span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="wishlist">
+                                                            <a href="#" class="link-wishlist hover-rhv-float" data-toggle="tooltip" data-placement="top" title="Add to Wishlist">Wishlist</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--  -->
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="product-view-list-detail product-view-list-detail1">
+                                            <div class="col-md-4">
+                                                <div class="product-view-list-img">
+                                                    <img src="images/home4/products/300x300.jpg" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="product-view-list-text">
+                                                    <h2 class="product-name">
+                    <a href="#" title="">Nike JorDan CP3</a>
+                    </h2>
+                                                    <div class="sub-name">Mens Trainning Shoe</div>
+                                                    <div class="description">
+                                                        <p><span>Description:</span></p>
+                                                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
+                                                    </div>
+                                                    <div class="price-box">
+                                                        <p class="special-price">
+                                                            <span class="price-label">Special Price</span>
+                                                            <span class="price">$85.00</span>
+                                                        </p>
+                                                        <p class="old-price">
+                                                            <span class="price-label">Special Price</span>
+                                                            <span class="price">$89.00</span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="color-option">
+                                                        <ul>
+                                                            <li>
+                                                                <p>Color:</p>
+                                                            </li>
+                                                            <li><span></span></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                    <div class="size-option">
+                                                        <p>Size: XL</p>
+                                                    </div>
+                                                    <div class="addtobag-wishlist">
+                                                        <div class="add-to-bag">
+                                                            <button type="button" class="hover-rhv-float button btn-cart" data-original-title="Add to bag" rel="tooltip"><span><span>Add to bag</span></span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="wishlist">
+                                                            <a href="#" class="link-wishlist hover-rhv-float" data-toggle="tooltip" data-placement="top" title="Add to Wishlist">Wishlist</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--  -->
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="product-view-list-detail product-view-list-detail1">
+                                            <div class="col-md-4">
+                                                <div class="product-view-list-img">
+                                                    <img src="images/home4/products/300x300.jpg" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="product-view-list-text">
+                                                    <h2 class="product-name">
+                    <a href="#" title="">Nike JorDan CP3</a>
+                    </h2>
+                                                    <div class="sub-name">Mens Trainning Shoe</div>
+                                                    <div class="description">
+                                                        <p><span>Description:</span></p>
+                                                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
+                                                    </div>
+                                                    <div class="price-box">
+                                                        <p class="special-price">
+                                                            <span class="price-label">Special Price</span>
+                                                            <span class="price">$85.00</span>
+                                                        </p>
+                                                        <p class="old-price">
+                                                            <span class="price-label">Special Price</span>
+                                                            <span class="price">$89.00</span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="color-option">
+                                                        <ul>
+                                                            <li>
+                                                                <p>Color:</p>
+                                                            </li>
+                                                            <li><span></span></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                    <div class="size-option">
+                                                        <p>Size: XL</p>
+                                                    </div>
+                                                    <div class="addtobag-wishlist">
+                                                        <div class="add-to-bag">
+                                                            <button type="button" class="button btn-cart hover-rhv-float" data-original-title="Add to bag" rel="tooltip"><span><span>Add to bag</span></span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="wishlist">
+                                                            <a href="#" class="link-wishlist hover-rhv-float" data-toggle="tooltip" data-placement="top" title="Add to Wishlist">Wishlist</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end banner-content1 -->
+                            <div class="products-bottom-title">
+                                <ul class="pagination">
+                                    {% for page_no in prod_s.paginator.page_range %}
+                                        {% if prod_s.number == page_no %}
+                                            <li class="active"><a href="#">{{page_no}}<span class="sr-only">(current)</span></a></li>
+                                        {% elif page_no < prod_s.number|add:'+3' and page_no > prod_s.number|add:'-3' %}
+                                            <li><a href="?page={{page_no}}">{{page_no}}<span class="sr-only">(current)</span></a></li>
+                                        {% endif %}
+                                    {% endfor %}
+
+                                    {% if prod_s.has_previous %}
+                                        <li><a href="?page={{prod_s.number|add:'-1'}}"><i class="fa fa-angle-left"></i></a></li>
+                                    {% else %}
+                                        <li class="disabled"><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                                    {% endif %}
+
+                                    {% if prod_s.has_next %}
+                                        <li><a href="?page={{prod_s.number|add:'+1'}}"><i class="fa fa-angle-right"></i></a></li>
+                                    {% else %}
+                                        <li class="disabled"><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                                    {% endif %}
+                                </ul>
+                                <!-- <div class="pager-title">
+                                    <p>Showing 1 to 2 Page 18 Product</p>
+                                </div> -->
+                            </div>
+                            <!-- bestsellerproduct -->
+
+                            <!--end-bestsellerproduct -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-sidebar-left col-col-left">
+                    <div class="main-home-left-sidebar main-grid-left-sidebar">
+                        <!-- categories-left -->
+                    </div>
+                    <!--end categories-left -->
+                    <!--start shop by -->
+                    <aside class="widget shopby">
+                        <div class="sb-title ">
+                            <h4>Product List</h4>
+                        </div>
+                        <div class="shopby-inner">
+
+                            <div class="shopby-widget">
+                                <ul>
+                                    {% for prod in prod_s %}
+                                        <li><a href="{% url 'details' prod.id %}">{{prod.name}} <span class="count">Rs.{{prod.price}}/-</span></a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </aside>
+                    <!--end -->
+
+                    <!--start -->
+                    <aside class="widget compare">
+                        <!-- <div class="sb-title ">
+                            <h4>Compe Products (0)</h4>
+                        </div> -->
+                        <div class="compare-content">
+                           <!--  <p>You have no items to compare!</p> -->
+                            <!-- <img src="images/product-add.jpg" alt=""> -->
+                        </div>
+                    </aside>
+                    <!--end -->
+                    <!--start -->
+                    <!--end -->
+                    <!--start -->
+                    <!--end -->
+                    <!--start -->
+                    <!--end -->
+                </div>
+
+            </div>
+        </div>
+    </section>
+{% endblock %}
