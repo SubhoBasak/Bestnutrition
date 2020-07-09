@@ -14,42 +14,42 @@
         <div class="col-xs-12 col-lg-4">
             <img class="image-center m-t-20" src="{% static 'images/logo.png' %}">
             <div class="card shadow-sm m-t-15 col-xs-12 col-lg-12">
-                <p class="form-header">Add Address</p>
+                <p class="form-header">Address</p>
                 <form class="m-b-15" method="POST">
                     {% csrf_token %}
                     <div class="form-group" data-validate="Please enter firstname">
                         <label for="firstname"><small class="text-dark font-weight-bold">First name</small></label>
-                        <input id="firstname" class="form-control" type="text" name="first_name" placeholder="First name" required>
+                        <input id="firstname" class="form-control" type="text" name="first_name" placeholder="First name" required value="{{form.instance.first_name}}">
                     </div>
 
                     <div class="form-group" data-validate="Please enter lastname">
                         <label for="lastname"><small class="text-dark font-weight-bold">Last name</small></label>
-                        <input id="lastname" class="form-control" type="text" name="last_name" placeholder="Last name">
+                        <input id="lastname" class="form-control" type="text" name="last_name" placeholder="Last name" required value="{{form.instance.last_name}}">
                     </div>
 
                     <div class="form-group" data-validate="Please enter phone number">
                         <label for="phone"><small class="text-dark font-weight-bold">Phone no.</small></label>
-                        <input id="phone" class="form-control" type="number" name="phone" placeholder="phone number">
+                        <input id="phone" class="form-control" type="number" name="phone" placeholder="phone number" required value="{{form.instance.phone}}">
                     </div>
 
                     <div class="form-group" data-validate="Please enter address">
                         <label for="address"><small class="text-dark font-weight-bold">Address</small></label>
-                        <input id="address" class="form-control" type="text" name="address" placeholder="Address" required>
+                        <input id="address" class="form-control" type="text" name="address" placeholder="Address" required value="{{form.instance.address}}">
                     </div>
 
                     <div class="form-group" data-validate="Please enter city">
                         <label for="city"><small class="text-dark font-weight-bold">City</small></label>
-                        <input id="city" class="form-control" type="text" name="city" placeholder="City" required>
+                        <input id="city" class="form-control" type="text" name="city" placeholder="City" required value="{{form.instance.city}}">
                     </div>
                     <div class="form-group" data-validate="Please enter state">
                         <label for="state"><small class="text-dark font-weight-bold">State</small></label>
-                        <input id="state" class="form-control" type="text" name="state" placeholder="State" required>
+                        <input id="state" class="form-control" type="text" name="state" placeholder="State" required value="{{form.instance.state}}">
                     </div>
                     <div class="form-group" data-validate="Please enter pincode">
                         <label for="pincode"><small class="text-dark font-weight-bold">Pincode</small></label>
-                        <input id="pincode" class="form-control" type="number" maxlength="6" name="pin_code" placeholder="Pincode" required>
+                        <input id="pincode" class="form-control" type="number" maxlength="6" name="pin_code" placeholder="Pincode" required value="{{form.instance.pin_code}}">
                     </div>
-                    <button type="submit" class="btn m-t-15 col-lg-12 btn-success">Continue</button>
+                    <button type="submit" class="btn m-t-15 col-lg-12 btn-success" name="save_and_continue">Save and continue</button>
                 </form>
             </div>
         </div>

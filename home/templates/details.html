@@ -113,7 +113,7 @@
                             <form method="POST">
                                 {% csrf_token %}
                                 <button type="submit" class="btn btn-success btn-lg" name="add_to_cart">Add to cart</button>
-                                <a href="/buy_now/{{main_prod.id}}/" class="btn btn-success btn-lg">Buy Now</a>
+                                <button type="submit" class="btn btn-success btn-lg" name="buy_now">Buy now</button>
                                 <button type="submit" class="btn btn-success btn-lg" name="ask_question">Ask Question</button>
                             </form>
                         </div>

@@ -23,21 +23,13 @@
                 <form class="m-b-10" method="POST">
                     {% csrf_token %}
                     <div class="form-group">
-                        <label for="exampleInputEmail1"><small class="text-dark font-weight-bold">First name</small></label>
-                        <input type="text" maxlength="100" class="form-control" placeholder="Enter first name" name="first_name">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1"><small class="text-dark font-weight-bold">Last name</small></label>
-                        <input type="text" maxlength="100" class="form-control" placeholder="Enter last name" name="last_name">
-                    </div>
-                    <div class="form-group">
                         <label for="exampleInputEmail1"><small class="text-dark font-weight-bold">Email address</small></label>
                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="email">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1"><small class="text-dark font-weight-bold">Password</small></label>
                         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
-                        <small id="emailHelp" class="form-text text-muted"><mark class="font-italic bgwhite font-weight-bold" style="color: blue;"> i </mark>Password must be at least 6 characters</small>
+<!--                        <small id="emailHelp" class="form-text text-muted"><mark class="font-italic bgwhite font-weight-bold" style="color: blue;"> i </mark>Password must be at least 6 characters</small>-->
                     </div>
                     <button type="submit" class="btn col-lg-12 btn-success">Continue</button>
                 </form>

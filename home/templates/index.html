@@ -27,6 +27,48 @@
     <script src="js/ie9/html5shiv.min.js"></script>
     <script src="js/ie9/respond.min.js"></script>
     <![endif]-->
+    <style style="text/css">
+            .drop-down-item {
+                font-weight: 500;
+                font-size: 1rem;
+                color: rgb(197, 197, 197);
+                position: relative;
+                line-height: 22px;
+                cursor: pointer;
+                margin-top: 0.2rem;
+            }
+
+            .dropdown-options {
+                margin: 0.4rem 0.4rem 0 0.8rem !important;
+                display: none;
+                font-size: 0.8rem;
+                color: yellow;
+            }
+
+            .dropdown-options a{
+                color: yellow;
+            }
+
+            .drop-nav:hover .dropdown-options {
+                display: block;
+            }
+
+            .health_prob_prod_outer{
+                display: flex;
+            }
+
+            .health_prob_prod{
+                display: block;
+                margin: auto;
+            }
+
+            @media only screen and (max-width: 949px){
+                .health_prob_prod_outer{
+                    display: block;
+
+                }
+            }
+    </style>
 </head>
 
 <body>
@@ -57,29 +99,10 @@
                                     <li><a href="{% url 'my_account' %}">My Account</a></li>
                                 </ul>
                             </div>
-                            <div class="vmenu_header">
-                                <div class="vmenu-header-v3 ">
-
-                                    <div class="vmegamenu-contain" id="hl_body">
-                                        <!-- vmenu_header -->
-                                        <!-- nav-left -->
-                                        <div class="nav-left-sidebar-v2">
-                                            <div class="nav-left-sidebar-inner">
-                                                <div class="left-megamenu-content">
-                                                    <ul class="list-unstyled nav_vmegamenu">
-                                                        <li class="level0"><img src="{% static 'images/blank.png' %}" alt=""></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!--end-nav-left -->
-                                        <!-- endvmenu_header -->
-                                    </div>
-                                    <!--  -->
-                                    <!--  -->
-                                </div>
-                                <!--end-nav-left -->
-                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
                             <!-- endvmenu_header -->
                             <!-- link-follow -->
                             <ul class="link-follow">
@@ -102,7 +125,6 @@
                                         <a href="{% url 'all_products' %}">All Products</a>
                                     </li>
                                     <li class="level-0"><a href="{% url 'about_us' %}">About Us</a></li>
-<!--                                    <li class="level-0"><a href="{% url 'contact_us' %}">Contact Us</a></li>-->
                                     <li class="level-0"><a href="{% url 'cart' %}">Cart</a></li>
                                     <li class="level-0"><a href="{% url 'my_account' %}">My Account</a></li>
                                 </ul>
@@ -131,6 +153,222 @@
                 </div>
             </div>
         </header>
+        <div class="fadeInUp animated" style="background: #222;width: 100%;">
+            <h2 class="title-user color-white" style="font-size: 1.5rem; color: white;">Health Problems </h2>
+            <div class="health_prob_prod_outer" style="background: #222; width: 100%; padding: 1rem;">
+                <div class="health_prob_prod">
+                    <div class="drop-nav">
+                        <p class="drop-down-item">Antioxidant</p>
+                        <div class="color-white dropdown-options fadeInUp animated">
+                            <ul>
+                                <li><a href="{% url 'details' 18 %}">Vitamin C</a></li>
+                                <li>CO Q10</li>
+                                <li>Amrit Chyavanprash</li>
+                                <li><a href="{% url 'details' 14 %}">Shilajit</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="drop-nav">
+                        <p class="drop-down-item">Anxiety</p>
+                        <div class="color-white dropdown-options fadeInUp animated">
+                            <ul>
+                                <li><a href="{% url 'details' 3 %}">Ashwagandha</a></li>
+                                <li><a href="{% url 'details' 18 %}">Vitamin C</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="drop-nav">
+                        <p class="drop-down-item">Breating Difficulties</p>
+                        <div class="color-white dropdown-options fadeInUp animated">
+                            <ul>
+                                <li>Germanium</li>
+                                <li>Amrit Chayavanprash</li>
+                                <li><a href="{% url 'details' 18 %}">Vitamin C</a></li>
+                                <li>Anantamul</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="drop-nav">
+                        <p class="drop-down-item">B Vitamins</p>
+                        <div class="color-white dropdown-options fadeInUp animated">
+                            <ul>
+                                <li>B1 Thiamin</li>
+                                <li>B2 Riboflavin</li>
+                                <li>B3 Niacin</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="health_prob_prod">
+                    <div class="drop-nav">
+                        <p class="drop-down-item">Cholesterol Support</p>
+                        <div class="color-white dropdown-options fadeInUp animated">
+                            <ul>
+                                <li>Omega3 Fish Oil</li>
+                                <li>Flaxseed Oil</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="drop-nav">
+                        <p class="drop-down-item">Cough & cold</p>
+                        <div class="color-white dropdown-options fadeInUp animated">
+                            <ul>
+                                <li><a href="{% url 'details' 18 %}">Vitamin C</a></li>
+                                <li><a href="{% url 'details' 16 %}">Tulsi</a></li>
+                                <li><a href="{% url 'details' 17 %}"></a>Vasaka</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="drop-nav">
+                        <p class="drop-down-item">Enzyme</p>
+                        <div class="color-white dropdown-options fadeInUp animated">
+                            <ul>
+                                <li><a href="{% url 'details' 15 %}">Triphala</a></li>
+                                <li>Omega 3 Fish Oil</li>
+                                <li>Bromelainin</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="drop-nav">
+                        <p class="drop-down-item">Energy Supplements</p>
+                        <div class="color-white dropdown-options fadeInUp animated">
+                            <ul>
+                                <li><a href="{% url 'details' 3 %}">Aswagandha</a></li>
+                                <li>Amrit Chayavanprash</li>
+                                <li>Safed Musli</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="health_prob_prod">
+                    <div class="drop-nav">
+                        <p class="drop-down-item">High Pressure</p>
+                        <div class="color-white dropdown-options fadeInUp animated">
+                            <ul>
+                                <li>Germanium</li>
+                                <li>Garlic</li>
+                                <li>Omega3 Fish Oil</li>
+                                <li><a href="{% url 'details' 14 %}">Shilajit</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="drop-nav">
+                        <p class="drop-down-item">Heart Support</p>
+                        <div class="color-white dropdown-options fadeInUp animated">
+                            <ul>
+                                <li>CO Q10</li>
+                                <li><a href="{% url 'details' 2 %}">Arjuna</a></li>
+                                <li>Selenium</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="drop-nav">
+                        <p class="drop-down-item">Immune Enhancer </p>
+                        <div class="color-white dropdown-options fadeInUp animated">
+                            <ul>
+                                <li><a href="{% url 'details' 18 %}">Vitamin C</a></li>
+                                <li>Zinc Asperate</li>
+                                <li><a href="{% url 'details' 8 %}">Guduchi</a></li>
+                                <li><a href="{% url 'details' 5 %}">Curcumin</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="drop-nav">
+                    <p class="drop-down-item">Joint Discomfort Support</p>
+                    <div class="color-white dropdown-options fadeInUp animated">
+                        <ul>
+                            <li>calcium Magnesium</li>
+                            <li>Glucosamine Chondroitin</li>
+                            <li>Germanium</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+                <div class="health_prob_prod">
+                    <div class="drop-nav">
+                        <p class="drop-down-item">Laxative</p>
+                        <div class="color-white dropdown-options fadeInUp animated">
+                            <ul>
+                                <li>Senolax</li>
+                                <li>Triphala</li>
+                                <li><a href="{% url 'details' 1 %}">Amla</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="drop-nav">
+                        <p class="drop-down-item">Liver Support</p>
+                        <div class="color-white dropdown-options fadeInUp animated">
+                            <ul>
+                                <li>Milk Thistle</li>
+                                <li><a href="{% url 'details' 18 %}">Vitamin C</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="drop-nav">
+                        <p class="drop-down-item">Male Sex Support</p>
+                        <div class="color-white dropdown-options fadeInUp animated">
+                            <ul>
+                                <li><a href="{% url 'details' 3 %}">Ashwagandha</a></li>
+                                <li><a href="{% url 'details' 14 %}">Shilajit</a></li>
+                                <li>Ginseng</li>
+                                <li>Safed Musli</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="drop-nav">
+                        <p class="drop-down-item">Skin Support</p>
+                        <div class="color-white dropdown-options fadeInUp animated">
+                            <ul>
+                                <li>Turmeric (curcumin)</li>
+                                <li>Alovera</li>
+                                <li><a href="{% url 'details' 12 %}">Neem</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="health_prob_prod">
+                    <div class="drop-nav">
+                        <p class="drop-down-item">Sleeping Problem</p>
+                        <div class="color-white dropdown-options fadeInUp animated">
+                            <ul>
+                                <li>Melatonin</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="drop-nav">
+                        <p class="drop-down-item">Sport Nutrition</p>
+                        <div class="color-white dropdown-options fadeInUp animated">
+                            <ul>
+                                <li>Whey Protein</li>
+                                <li>BCAA</li>
+                                <li>Glutamine</li>
+                                <li>Creatine</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="drop-nav">
+                        <p class="drop-down-item">Stress Relief</p>
+                        <div class="color-white dropdown-options fadeInUp animated">
+                            <ul>
+                                <li>Selenium</li>
+                                <li><a href="{% url 'details' 18 %}">Vitamin C</a></li>
+                                <li><a href="{% url 'details' 3 %}">Aswagandha</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="drop-nav">
+                        <p class="drop-down-item">Weight Loss Support</p>
+                        <div class="color-white dropdown-options fadeInUp animated">
+                            <ul>
+                                <li>Garcenia Combogia</li>
+                                <li>Acai Berry</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <section class="main-home main-home-v1">
             <div class="section">
                 <div class="row">

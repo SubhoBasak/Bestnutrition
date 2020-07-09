@@ -39,13 +39,13 @@ class ProductImages(models.Model):
 
 class Address(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    first_name = models.CharField(max_length=100, null=False, blank=False)
-    last_name = models.CharField(max_length=100, null=False, blank=False)
-    phone = models.CharField(max_length=15, null=False, blank=False)
-    address = models.TextField(null=False, blank=False)
-    city = models.CharField(max_length=200, null=False, blank=False)
-    state = models.CharField(max_length=200, null=False, blank=False)
-    pin_code = models.CharField(max_length=6, null=False, blank=False)
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    phone = models.CharField(max_length=15)
+    address = models.TextField()
+    city = models.CharField(max_length=200)
+    state = models.CharField(max_length=200)
+    pin_code = models.CharField(max_length=6)
 
 
 class BaseUserProduct(models.Model):
@@ -75,8 +75,8 @@ class Order(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     total = models.FloatField(default=0.0)
     payment_status = models.CharField(max_length=1, default='1', choices = [('1', 'Pending payment'), ('2', 'Payment done')])
-    status = models.CharField(max_length=1, default='?',
-                              choices=[('3', 'Packed'), ('4', 'Shipped'), ('5', 'Delivered'), ('6', 'Returned'), ('7', 'Canceld'), ('8', 'Refunded')])
+    status = models.CharField(max_length=1, default='1',
+                              choices=[('1', 'Pending payment'), ('3', 'Packed'), ('4', 'Shipped'), ('5', 'Delivered'), ('6', 'Returned'), ('7', 'Canceld'), ('8', 'Refunded')])
     status_message = models.TextField(null=True, blank=True)
     order_date_time = models.DateTimeField(null=False, auto_now_add=True)
     first_name = models.CharField(max_length=100)

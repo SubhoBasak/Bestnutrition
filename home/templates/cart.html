@@ -120,7 +120,10 @@
                         <p class="col" style="font-weight: 500; padding-left: 1.4rem;">Grand total</p>
                         <p class="col text-center" style="padding-right: 1.4rem;">{{grand_total}}</p>
                     </div>
-                    <button class="btn btn-success rounded-0 m-t-5">Checkout</button>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <button class="btn btn-success rounded-0 m-t-5" name="check_out">Checkout</button>
+                    </form>
                 </div>
             </div>
             <!-- end of checkout card  -->

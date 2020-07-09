@@ -76,16 +76,8 @@ def details_view(request, prod_id):
             obj = models.Cart(user = request.user, product = main_prod)
         obj.save()
         return redirect(reverse('cart'))
-    # elif 'add_to_wish_list' in request.POST:
-    #     if request.user.is_authenticated:
-    #         return redirect('/signin/?next=' + request.path)
-    #     try:
-    #         obj = models.WishList.objects.get(user = request.user, product = main_prod)
-    #     except models.WishList.DoesNotExist:
-    #         obj = models.WishList(user = request.user, product = main_prod)
-    #         obj.save()
-    # elif 'buy_now' in request.POST:
-    #     reverse()
+    elif 'buy_now' in request.POST:
+        return redirect('/select_address/'+str(main_prod.id)+'/1/')
     elif 'ask_question' in request.POST:
         return redirect(reverse('ask_question', args = [prod_id]))
     img_s = models.ProductImages.objects.filter(prod__id = prod_id)
@@ -156,14 +148,7 @@ def cart_view(request):
     cart_items = models.Cart.objects.filter(user=request.user)
     wish_list_items = models.WishList.objects.filter(user = request.user)
     if 'check_out' in request.POST:
-        order = models.Order(user = request.user)
-        for item in cart_items:
-            obj = models.ProductList(product_id = item.product.id, price = item.product.price, quantity = item.product.quantity)
-            obj.save()
-            order.products.add(obj)
-        order.save()
-        pass
-        return redirect(reverse('checkout'))
+        return redirect('/select_address/0/2/')
     elif 'remove_item_cart' in request.POST:
         try:
             obj = cart_items.get(id = request.POST['remove_item_cart'])
@@ -205,6 +190,7 @@ def cart_view(request):
                 obj.save()
         except Exception as e:
             pass
+
     total = 0
     quantity = 0
     delivery = 100
@@ -271,13 +257,52 @@ def ask_question_view(request, prod_id):
 
 
 @login_required
-def add_address(request):
-    form = forms.AddressForm(request.POST)
+def select_address(request, prod_id, buy_type):
+    try:
+        cur_address = models.Address.objects.get(user = request.user)
+    except models.Address.DoesNotExist:
+        cur_address = models.Address(user = request.user)
+        cur_address.save()
+    form = forms.AddressForm(request.POST or None, instance = cur_address)
     if form.is_valid():
-        obj = form.save(commit=False)
-        obj.user = request.user
-        obj.save()
-    return render(request, 'updateAddress.html')
+        cur_address = form.save(commit=False)
+        cur_address.user = request.user
+        cur_address.save()
+        this_oid = 'ORDID'+timezone.now().strftime('%Y%m%d%H%M%S')+str(request.user.id)
+        this_order = models.Order(user = request.user, oid = this_oid,
+                                  first_name = cur_address.first_name,
+                                  last_name = cur_address.last_name,
+                                  address = cur_address.address,
+                                  city = cur_address.city,
+                                  state = cur_address.state,
+                                  phone = cur_address.phone,
+                                  pin_code = cur_address.pin_code)
+        this_order.save()
+        if buy_type == 1:
+            try:
+                main_prod = models.Product.objects.get(id=prod_id)
+            except models.Product.DoesNotExist:
+                return redirect(reverse('index'))
+            prod_list = models.ProductList(product = main_prod, price = main_prod.price, quantity = 1, order = this_order)
+            prod_list.save()
+            this_order.total = main_prod.price
+            this_order.save()
+        elif buy_type == 2:
+            cart_items = models.Cart.objects.filter(user = request.user)
+            if len(cart_items) == 0:
+                return redirect(reverse('index'))
+            cur_total = 0
+            for each_item in cart_items:
+                prod_list = models.ProductList(product = each_item.product, price = each_item.product.price, quantity = each_item.quantity, order = this_order)
+                prod_list.save()
+                cur_total += each_item.product.price * each_item.quantity
+            if cur_total < 1000:
+                cur_total += 100
+            this_order.total = cur_total
+            this_order.save()
+            cart_items.delete()
+
+    return render(request, 'updateAddress.html', {'form': form})
 
 
 def site_map(request):
@@ -288,10 +313,10 @@ def site_map(request):
 def distributors(request):
     status = 0
     if 'name' in request.POST and 'email' in request.POST and 'subject' in request.POST and 'message' in request.POST:
-        obj = models.Distributor(name = request.POST['name'],
-                                  email = request.POST['email'],
-                                  subject = request.POST['subject'],
-                                  message = request.POST['message'])
+        obj = models.Distributor(name=request.POST['name'],
+                                 email=request.POST['email'],
+                                 subject=request.POST['subject'],
+                                 message=request.POST['message'])
         obj.save()
         status = 1
     return render(request, 'distributors.html', {'status': status})

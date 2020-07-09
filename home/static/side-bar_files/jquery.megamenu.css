@@ -1,0 +1,268 @@
+/*
+  jQuery MegaMenu Plugin
+  Author: GeekTantra
+  Author URI: http://www.geektantra.com
+*/
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+ul.megamenu {
+  background-color: #0F0;
+  border-top: 1px solid #888;
+  border-bottom: 1px solid #666;
+  margin: 0px auto;
+  padding: 5px 100px;
+  list-style: none;
+  display: none;
+  
+}
+.img1
+{
+	max-width:100%;
+}
+
+ul.megamenu li.mm-item {
+}
+
+ul.megamenu li {
+  margin: 0px;
+  padding: 0px;
+
+}
+
+ul.megamenu li.clear-fix {
+  float: none;
+  clear: both;
+  margin: 0px;
+  padding: 0px;
+  height: 0px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0px;
+  line-height: 0px;
+ 
+}
+
+ul.megamenu a.mm-item-link:link, ul.megamenu a.mm-item-link:visited {
+  position: relative;
+  display: inline-block;
+  color:#FFF;
+  font-family: 'Roboto', sans-serif;
+  font-weight:bolder;
+  padding: 8px 15px;
+  margin: 0px 3px 0px 0px;
+  text-decoration: none;
+  z-index: 10;
+  font-size: 20px;
+  border-top: 1px solid transparent;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+}
+*html ul.megamenu a.mm-item-link:link, *html ul.megamenu a.mm-item-link:visited {
+  border-color: pink;
+  filter: chroma(color=pink);
+}
+
+ul.megamenu a.mm-item-link-hover:link, ul.megamenu a.mm-item-link-hover:visited {
+  color:#0F0;
+  background: #green;
+  border-top: 1px solid #777;
+  border-left: 1px solid #777;
+  border-right: 1px solid #777;
+  -moz-border-radius: 3px 3px 0px 0px;
+  border-radius: 3px 3px 0px 0px;
+}
+
+ul.megamenu div.mm-item-content {
+  background: #0F0;
+  padding: 0px;
+  position: absolute;
+  border: 1px solid #777;
+  z-index: 9;
+}
+
+.mm-content-base {
+  background:#0F0;
+  position: relative;
+  z-index: 11;
+  padding: 10px;
+}
+.mm-js-shadow {
+  background:#0F0;
+  position: absolute;
+  z-index: 10;
+}
+li
+{
+	color:yellow;
+}
+a{
+	
+	font-size:14px;
+	
+}
+.dropmenu
+{
+background:#FFF;
+font-family: 'Roboto', sans-serif;
+font-size:20px;	
+font-weight:bold;
+padding:10px;
+color:#000;
+}
+#nav {
+  width: 282px;
+  height:34px;  
+  border-style:solid;
+  border-width:medium;
+  text-align:right;
+  font-family: 'Roboto', sans-serif;
+  float:left;
+	
+}
+
+
+#slideshow {
+position:relative;	
+height:400px;
+float:right;
+margin:0;
+width:600px;
+}
+#slideshow IMG {
+position:absolute;
+top:0;
+left:0;
+z-index:8;
+opacity:0.0;
+}
+
+
+#slideshow IMG.last-active {
+z-index:9;
+}
+.pageSlider{margin-bottom:20px;}
+
+#slideshow li{position:absolute;top:0;left:0;z-index:0;opacity:0.0;}
+#slideshow li.active{z-index:0;opacity:1.0;}
+#slideshow li.last-active{z-index:0;}
+
+
+#homemiddle
+{
+	top:400px;
+	position:relative;
+	width:1200px;
+	background-color:transparent;
+	border:double;
+}
+a
+{
+	cursor:pointer;
+}
+
+.accrodian_menu{
+	width:110px;
+	height:100%;	
+	padding:0 10px;
+	margin:auto;
+}
+.accordion_toggle {
+
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(green), to(transparent));
+    background-image: 
+        -webkit-linear-gradient(180deg, green, transparent),
+        -webkit-linear-gradient(180deg, green, transparent);
+    background-image: 
+        -moz-linear-gradient(180deg, green, transparent),
+        -moz-linear-gradient(180deg, green, transparent)
+    ;
+    background-image:
+        -o-linear-gradient(180deg, green, transparent),
+        -o-linear-gradient(180deg, green, transparent)
+    ;
+    background-image: 
+        linear-gradient(90deg, green, transparent),
+        linear-gradient(90deg, green, transparent)
+    ;
+    -moz-background-size: 100% 3px;
+    background-size: 100% 3px;
+    background-position: 0 0, 0 100%;
+    background-repeat: no-repeat;
+    text-align:left;
+	line-height: 20px;
+	color:#063b05;
+	font-family: 'Roboto', sans-serif;
+	text-decoration: none;
+	font-size:0.80em;
+	cursor: pointer;
+	margin:0px;
+    padding:5px;
+	font-weight:bold;
+    height:30px;
+}
+.accordion_toggle_active {
+	
+	color:#063b05;
+	font-weight:bold;
+}
+		
+.accordion_content {
+	
+	color: #444444;
+	overflow: hidden;
+	width:220px;
+	padding:0;
+}
+.accordion_content ul{
+	margin:0px;
+	padding:0;
+}
+.accordion_content ul li{
+	margin:0;
+	padding:0 0 0 15px;
+	line-height:20px;
+	list-style:none;
+	background:url(../Images/arrow.png) no-repeat center left;
+}
+.accordion_content ul li a{
+	font-family: 'Roboto', sans-serif;
+	text-decoration:none;
+	color:#1d9c00;
+	font-size:12px;
+}
+.accordion_content ul li a:hover{
+	text-decoration:none;
+	color:#000000;
+}
+@media screen and (max-width: 960px) {
+	
+	.accrodian_menu{
+	width:110px;
+	height:100%;	
+	padding:0 10px;
+	margin:auto;
+}
+	
+	
+}
+@media screen and (max-width: 960px) {
+	
+	.accrodian_menu{
+	width:110px;
+	height:100%;	
+	padding:0 10px;
+	margin:auto;
+}
+	
+	
+}
+@media screen and (max-width: 790px) {
+	
+.accrodian_menu{
+	width:100%;
+	height:100%;	
+	padding:0;
+	margin:0;
+}
+	
+	
+}
+
