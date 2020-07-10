@@ -8,7 +8,7 @@ from django.contrib import messages
 from django.core.paginator import Paginator
 from django.core.mail import send_mail
 from django.utils import timezone
-from .ccavutil import encrypt, decrypt
+# from .ccavutil import encrypt, decrypt
 from . import forms
 from . import models
 import datetime
@@ -302,36 +302,36 @@ def select_address(request, prod_id, buy_type):
             this_order.total = cur_total
             this_order.save()
             cart_items.delete()
-        merchant_data = 'merchant_id=' + '128690' + '&' + 'order_id=' + this_order.oid + '&' + "currency=" + 'INR' + '&' + 'amount=' + str(
-            this_order.total) + '&' + 'redirect_url=' + 'http://bestnutrition.pythonanywhere.com' + '&' + 'cancel_url=' + 'http://bestnutrition.pythonanywhere.com' + '&' + 'language=' + 'EN' + '&' + 'billing_name=' + this_order.first_name + ' ' + this_order.last_name + '&' + 'billing_address=' + this_order.address + '&' + 'billing_city=' + this_order.city + '&' + 'billing_state=' + this_order.state + '&' + 'billing_zip=' + this_order.pin_code + '&' + 'billing_country=' + 'India' + '&' + 'billing_tel=' + this_order.phone + '&' + 'billing_email=' + request.user.email + '&' + 'delivery_name=' + this_order.first_name + ' ' + this_order.last_name + '&' + 'delivery_address=' + this_order.address + '&' + 'delivery_city=' + this_order.city + '&' + 'delivery_state=' + this_order.state + '&' + 'delivery_zip=' + this_order.pin_code + '&' + 'delivery_country=' + 'India' + '&' + 'delivery_tel=' + this_order.phone + '&' + 'merchant_param1=' + '' + '&' + 'merchant_param2=' + '' + '&' + 'merchant_param3=' + '' + '&' + 'merchant_param4=' + '' + '&' + 'merchant_param5=' + '' + '&' + 'integration_type=' + 'iframe_normal' + '&' + 'promo_code=' + '' + '&' + 'customer_identifier=' + str(
-            request.user.id) + '&'
-        encryption = encrypt(merchant_data, workingKey)
-        html_page = "\
-                    <html>\
-                    <head>\
-                    	<title>Sub-merchant checkout page</title>\
-                    	<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>\
-                    </head>\
-                    <body>\
-                        <center>\
-                    	<!-- width required mininmum 482px -->\
-                           	<iframe  width='482' height='500' scrolling='No' frameborder='0'  id='paymentFrame' src='https://test.ccavenue.com/transaction/transaction.do?command=initiateTransaction&merchant_id=128690&encRequest=" + str(
-            encryption) + "&access_code=AVBS69EC92CG63SBGC'>\
-                    	  	</iframe>\
-                    	</center>\
-                    	<script type='text/javascript'>\
-                        	$(document).ready(function(){\
-                        		$('iframe#paymentFrame').load(function() {\
-                    				 window.addEventListener('message', function(e) {\
-                    			    	 $('#paymentFrame').css('height',e.data['newHeight']+'px');\
-                    			 	 }, true);\
-                    			 });\
-                        	});\
-                    	</script>\
-                      </body>\
-                    </html>\
-                    "
-        return HttpResponse(html_page)
+        # merchant_data = 'merchant_id=' + '128690' + '&' + 'order_id=' + this_order.oid + '&' + "currency=" + 'INR' + '&' + 'amount=' + str(
+        #     this_order.total) + '&' + 'redirect_url=' + 'http://bestnutrition.pythonanywhere.com' + '&' + 'cancel_url=' + 'http://bestnutrition.pythonanywhere.com' + '&' + 'language=' + 'EN' + '&' + 'billing_name=' + this_order.first_name + ' ' + this_order.last_name + '&' + 'billing_address=' + this_order.address + '&' + 'billing_city=' + this_order.city + '&' + 'billing_state=' + this_order.state + '&' + 'billing_zip=' + this_order.pin_code + '&' + 'billing_country=' + 'India' + '&' + 'billing_tel=' + this_order.phone + '&' + 'billing_email=' + request.user.email + '&' + 'delivery_name=' + this_order.first_name + ' ' + this_order.last_name + '&' + 'delivery_address=' + this_order.address + '&' + 'delivery_city=' + this_order.city + '&' + 'delivery_state=' + this_order.state + '&' + 'delivery_zip=' + this_order.pin_code + '&' + 'delivery_country=' + 'India' + '&' + 'delivery_tel=' + this_order.phone + '&' + 'merchant_param1=' + '' + '&' + 'merchant_param2=' + '' + '&' + 'merchant_param3=' + '' + '&' + 'merchant_param4=' + '' + '&' + 'merchant_param5=' + '' + '&' + 'integration_type=' + 'iframe_normal' + '&' + 'promo_code=' + '' + '&' + 'customer_identifier=' + str(
+        #     request.user.id) + '&'
+        # encryption = encrypt(merchant_data, workingKey)
+        # html_page = "\
+        #             <html>\
+        #             <head>\
+        #             	<title>Sub-merchant checkout page</title>\
+        #             	<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>\
+        #             </head>\
+        #             <body>\
+        #                 <center>\
+        #             	<!-- width required mininmum 482px -->\
+        #                    	<iframe  width='482' height='500' scrolling='No' frameborder='0'  id='paymentFrame' src='https://test.ccavenue.com/transaction/transaction.do?command=initiateTransaction&merchant_id=128690&encRequest=" + str(
+        #     encryption) + "&access_code=AVBS69EC92CG63SBGC'>\
+        #             	  	</iframe>\
+        #             	</center>\
+        #             	<script type='text/javascript'>\
+        #                 	$(document).ready(function(){\
+        #                 		$('iframe#paymentFrame').load(function() {\
+        #             				 window.addEventListener('message', function(e) {\
+        #             			    	 $('#paymentFrame').css('height',e.data['newHeight']+'px');\
+        #             			 	 }, true);\
+        #             			 });\
+        #                 	});\
+        #             	</script>\
+        #               </body>\
+        #             </html>\
+        #             "
+        # return HttpResponse(html_page)
     return render(request, 'updateAddress.html', {'form': form})
 
 

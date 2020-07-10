@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from Crypto.Cipher import AES
+# from Crypto.Cipher import AES
 from hashlib import md5
 
 def pad(data):
